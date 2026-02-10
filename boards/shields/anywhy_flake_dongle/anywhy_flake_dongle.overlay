@@ -1,0 +1,17 @@
+#include "anywhy_flake.dtsi"
+
+/ {
+    chosen {
+        zmk,kscan = &mock_kscan;
+        zmk,physical-layout = &medium_layout;  // Flake M layout
+    };
+
+    mock_kscan: mock_kscan_0 {
+        compatible = "zmk,kscan-mock";
+        columns = <0>;
+        rows = <0>;
+        events = <0>;
+        exit-after;
+        wakeup-source;
+    };
+};

@@ -1,28 +1,34 @@
-# This file generates the GitHub Actions matrix.
-# For simple board + shield combinations, add them to the top level board and
-# shield arrays, for more control, add individual board + shield combinations
-# to the `include` property. You can also use the `cmake-args` property to
-# pass flags to the build command, `snippet` to add a Zephyr snippet, and
-# `artifact-name` to assign a name to distinguish build outputs from each other:
-#
-# board: [ "nice_nano" ]
-# shield: [ "corne_left", "corne_right" ]
-# include:
-#   - board: bdn9_rev2
-#   - board: nice_nano
-#     shield: reviung41
-#   - board: nice_nano
-#     shield: corne_left
-#     snippet: studio-rpc-usb-uart
-#     cmake-args: -DCONFIG_ZMK_STUDIO=y
-#     artifact-name: corne_left_with_studio
-#
 ---
 include:
+  # === BLE MODE ===
   - board: xiao_ble
     shield: anywhy_flake_left
     snippet: studio-rpc-usb-uart
+    artifact-name: anywhy_flake_left_ble
+
   - board: xiao_ble
     shield: anywhy_flake_right
+    artifact-name: anywhy_flake_right_ble
+
+  # === DONGLE MODE ===
+  - board: xiao_ble
+    shield: anywhy_flake_left
+    cmake-args:
+      - -DCONFIG_FILE=anywhy_flake_left_dongle.conf
+    artifact-name: anywhy_flake_left_dongled
+
+  - board: xiao_ble
+    shield: anywhy_flake_right
+    cmake-args:
+      - -DCONFIG_FILE=anywhy_flake_right_dongle.conf
+    artifact-name: anywhy_flake_right_dongled
+
+  - board: xiao_ble
+    shields:
+      - anywhy_flake_dongle # ← Your dongle shield
+      - prospector_adapter # ← Screen support
+    artifact-name: anywhy_flake_dongle
+
+  # === UTILITY ===
   - board: xiao_ble
     shield: settings_reset

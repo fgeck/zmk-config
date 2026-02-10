@@ -4,15 +4,27 @@ manifest:
   remotes:
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
-    # Additional modules containing boards/shields/custom code can be listed here as well
-    # See https://docs.zephyrproject.org/3.2.0/develop/west/manifest.html#projects
+    - name: carrefinho
+      url-base: https://github.com/carrefinho
+    - name: anywhy-io
+      url-base: https://github.com/anywhy-io
+    - name: janpfischer
+      url-base: https://github.com/janpfischer
   projects:
     - name: zmk
       remote: zmkfirmware
+      revision: main
       import: app/west.yml
     - name: flake-zmk-module
-      url: https://github.com/anywhy-io/flake-zmk-module
+      remote: anywhy-io
       revision: main
       path: modules/flake-zmk-module
+    - name: prospector-zmk-module
+      remote: carrefinho
+      revision: feat/new-status-screens
+      path: modules/prospector-zmk-module
+    - name: zmk-dongle-screen
+      remote: janpfischer
+      revision: upgrade-4.1
   self:
     path: config
