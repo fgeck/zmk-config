@@ -5,30 +5,25 @@ include:
     shield: anywhy_flake_left
     snippet: studio-rpc-usb-uart
     artifact-name: anywhy_flake_left_ble
-
   - board: xiao_ble
     shield: anywhy_flake_right
     artifact-name: anywhy_flake_right_ble
-
   # === DONGLE MODE ===
   - board: xiao_ble
     shield: anywhy_flake_left
     cmake-args:
       - -DCONFIG_FILE=anywhy_flake_left_dongle.conf
     artifact-name: anywhy_flake_left_dongled
-
   - board: xiao_ble
     shield: anywhy_flake_right
     cmake-args:
       - -DCONFIG_FILE=anywhy_flake_right_dongle.conf
     artifact-name: anywhy_flake_right_dongled
-
   - board: xiao_ble
     shields:
       - anywhy_flake_dongle # ← Your dongle shield
       - prospector_adapter # ← Screen support
     artifact-name: anywhy_flake_dongle
-
   # === UTILITY ===
   - board: xiao_ble
     shield: settings_reset
