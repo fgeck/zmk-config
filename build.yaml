@@ -27,3 +27,5 @@ include:
   # === UTILITY ===
   - board: xiao_ble
     shield: settings_reset
+  - board: xiao_ble
+    shield: tester_xiao
