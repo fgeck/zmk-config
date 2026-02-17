@@ -25,7 +25,7 @@ include:
   #     - prospector_adapter
   #   artifact-name: anywhy_flake_dongle
   # === UTILITY ===
-  - board: xiao_ble
+  - board: seeeduino_xiao_ble
     shield: settings_reset
-  - board: xiao_ble
+  - board: seeeduino_xiao_ble
     shield: tester_xiao
