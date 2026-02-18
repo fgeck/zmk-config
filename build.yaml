@@ -1,31 +1,27 @@
 ---
 include:
   # === BLE MODE ===
-  - board: xiao_ble
+  - board: xiao_ble//zmk
     shield: anywhy_flake_left
     snippet: studio-rpc-usb-uart
     artifact-name: anywhy_flake_left_ble
-  - board: xiao_ble
+  - board: xiao_ble//zmk
     shield: anywhy_flake_right
     artifact-name: anywhy_flake_right_ble
   # === DONGLE MODE ===
-  # - board: xiao_ble
+  # - board: xiao_ble//zmk
   #   shield: anywhy_flake_left
-  #   cmake-args:
-  #     - -DCONFIG_FILE=anywhy_flake_left_dongle.conf
+  #   cmake-args: -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
   #   artifact-name: anywhy_flake_left_dongled
-  # - board: xiao_ble
+  # - board: xiao_ble//zmk
   #   shield: anywhy_flake_right
-  #   cmake-args:
-  #     - -DCONFIG_FILE=anywhy_flake_right_dongle.conf
+  #   cmake-args: -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
   #   artifact-name: anywhy_flake_right_dongled
-  # - board: xiao_ble
-  #   shields:
-  #     - anywhy_flake_dongle
-  #     - prospector_adapter
+  # - board: xiao_ble//zmk
+  #   shield: anywhy_flake_dongle prospector_adapter
   #   artifact-name: anywhy_flake_dongle
   # === UTILITY ===
-  - board: seeeduino_xiao_ble
+  - board: xiao_ble//zmk
     shield: settings_reset
-  - board: seeeduino_xiao_ble
+  - board: xiao_ble//zmk
     shield: tester_xiao

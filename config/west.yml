@@ -1,30 +1,30 @@
 manifest:
-  defaults:
-    revision: main
   remotes:
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
     - name: carrefinho
       url-base: https://github.com/carrefinho
-    - name: anywhy-io
-      url-base: https://github.com/anywhy-io
-    - name: janpfischer
-      url-base: https://github.com/janpfischer
+    - name: fgeck
+      url-base: https://github.com/fgeck
+    # - name: anywhy-io
+    #   url-base: https://github.com/anywhy-io
   projects:
     - name: zmk
       remote: zmkfirmware
-      revision: v0.3
-      import: app/west.yml
-    - name: flake-zmk-module
-      remote: anywhy-io
       revision: main
+      import: app/west.yml
+    # Use fgeck fork until PR #15 merges to anywhy-io/flake-zmk-module
+    - name: flake-zmk-module
+      remote: fgeck
+      revision: updateBoardsNaming
       path: modules/flake-zmk-module
+    # - name: flake-zmk-module
+    #   remote: anywhy-io
+    #   revision: main
+    #   path: modules/flake-zmk-module
     - name: prospector-zmk-module
       remote: carrefinho
       revision: feat/new-status-screens
       path: modules/prospector-zmk-module
-    - name: zmk-dongle-screen
-      remote: janpfischer
-      revision: upgrade-4.1
   self:
     path: config
