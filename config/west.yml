@@ -4,24 +4,17 @@ manifest:
       url-base: https://github.com/zmkfirmware
     - name: carrefinho
       url-base: https://github.com/carrefinho
-    - name: fgeck
-      url-base: https://github.com/fgeck
-    # - name: anywhy-io
-    #   url-base: https://github.com/anywhy-io
+    - name: anywhy-io
+      url-base: https://github.com/anywhy-io
   projects:
     - name: zmk
       remote: zmkfirmware
       revision: main
       import: app/west.yml
-    # Use fgeck fork until PR #15 merges to anywhy-io/flake-zmk-module
     - name: flake-zmk-module
-      remote: fgeck
-      revision: updateBoardsNaming
+      remote: anywhy-io
+      revision: main
       path: modules/flake-zmk-module
-    # - name: flake-zmk-module
-    #   remote: anywhy-io
-    #   revision: main
-    #   path: modules/flake-zmk-module
     - name: prospector-zmk-module
       remote: carrefinho
       revision: feat/new-status-screens
