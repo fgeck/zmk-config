@@ -36,6 +36,13 @@
 // Configuration
 // ─────────────────────────────────────────────────────────────────────────────
 #define TAP_DANCE_TERM 180
+#define QUICK_TAP_MS 175
+
+// Key position groups for HRM (Flake L format, 58 keys)
+// Row 0: 0-11 (L only), Row 1: 12-23, Row 2: 24-35, Row 3: 36-47, Thumbs: 48-57
+#define KEYS_L 12 13 14 15 16 17 24 25 26 27 28 29 36 37 38 39 40 41
+#define KEYS_R 18 19 20 21 22 23 30 31 32 33 34 35 42 43 44 45 46 47
+#define THUMBS 48 49 50 51 52 53 54 55 56 57
 
 // ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
 //
@@ -48,6 +55,86 @@
 // ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
 
 / {
+    behaviors {
+        // ─────────────────────────────────────────────────────────────────────────────
+        // Home Row Mods - urob's "timeless" configuration
+        // Left hand: triggers on right hand keys + thumbs
+        // Right hand: triggers on left hand keys + thumbs
+        //
+        // TUNING GUIDE:
+        // ┌─────────────────────────┬────────────────────────────────────────────────┐
+        // │ Problem                 │ Solution                                       │
+        // ├─────────────────────────┼────────────────────────────────────────────────┤
+        // │ Accidental holds when   │ Increase require-prior-idle-ms (e.g., 175)    │
+        // │ typing fast             │ or increase tapping-term-ms (e.g., 300)       │
+        // ├─────────────────────────┼────────────────────────────────────────────────┤
+        // │ Hard to trigger holds   │ Decrease tapping-term-ms (e.g., 250)          │
+        // │ (mod doesn't activate)  │ or decrease require-prior-idle-ms (e.g., 100) │
+        // ├─────────────────────────┼────────────────────────────────────────────────┤
+        // │ Same-hand combos fail   │ Add problem key positions to                  │
+        // │ (e.g., Ctrl+S)          │ hold-trigger-key-positions                    │
+        // ├─────────────────────────┼────────────────────────────────────────────────┤
+        // │ Double-tap repeat slow  │ Decrease quick-tap-ms (e.g., 150)             │
+        // ├─────────────────────────┼────────────────────────────────────────────────┤
+        // │ Rolls trigger holds     │ Remove hold-trigger-on-release                │
+        // │ (typing "sd" = Ctrl+D)  │ (but this makes intentional holds harder)     │
+        // └─────────────────────────┴────────────────────────────────────────────────┘
+        //
+        // Current values (urob's timeless defaults):
+        //   tapping-term-ms = 280    - Time to hold before mod activates
+        //   quick-tap-ms = 175       - Window for double-tap to repeat key
+        //   require-prior-idle-ms = 150 - Ignore hold if typed recently (anti-misfires)
+        // ─────────────────────────────────────────────────────────────────────────────
+        hml: home_row_mod_left {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "balanced";
+            tapping-term-ms = <280>;
+            quick-tap-ms = <QUICK_TAP_MS>;
+            require-prior-idle-ms = <150>;
+            bindings = <&kp>, <&kp>;
+            hold-trigger-key-positions = <KEYS_R THUMBS>;
+            hold-trigger-on-release;
+        };
+
+        hmr: home_row_mod_right {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "balanced";
+            tapping-term-ms = <280>;
+            quick-tap-ms = <QUICK_TAP_MS>;
+            require-prior-idle-ms = <150>;
+            bindings = <&kp>, <&kp>;
+            hold-trigger-key-positions = <KEYS_L THUMBS>;
+            hold-trigger-on-release;
+        };
+
+        // HRM variants for tap-dance keys (A→ä on left, ;→: on right)
+        hml_td_a: home_row_mod_left_td_a {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "balanced";
+            tapping-term-ms = <280>;
+            quick-tap-ms = <QUICK_TAP_MS>;
+            require-prior-idle-ms = <150>;
+            bindings = <&kp>, <&td_a>;
+            hold-trigger-key-positions = <KEYS_R THUMBS>;
+            hold-trigger-on-release;
+        };
+
+        hmr_td_semi: home_row_mod_right_td_semi {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "balanced";
+            tapping-term-ms = <280>;
+            quick-tap-ms = <QUICK_TAP_MS>;
+            require-prior-idle-ms = <150>;
+            bindings = <&kp>, <&td_semi>;
+            hold-trigger-key-positions = <KEYS_L THUMBS>;
+            hold-trigger-on-release;
+        };
+    };
+
     combos {
         compatible = "zmk,combos";
 
@@ -321,7 +408,7 @@
 //         ┃  ENTER  ┃    Q    ┃    W    ┃    E    ┃    R    ┃    T    ┃                     ┃    Y    ┃   U/Ü   ┃    I    ┃   O/Ö   ┃    P    ┃  BSPC   ┃
 //         ┣━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━┫                     ┣━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━┫
 //         ┃   TAB   ┃   A/Ä   ┃    S    ┃    D    ┃    F    ┃    G    ┃                     ┃    H    ┃    J    ┃    K    ┃    L    ┃   ;/:   ┃   '/"   ┃
-//         ┃         ┃  (GUI)  ┃  (ALT)  ┃  (CTRL) ┃ (SHIFT) ┃         ┃                     ┃         ┃ (SHIFT) ┃  (CTRL) ┃  (ALT)  ┃  (GUI)  ┃         ┃  <- HRM later
+//         ┃         ┃   GUI   ┃   ALT   ┃  CTRL   ┃  SHIFT  ┃         ┃                     ┃         ┃  SHIFT  ┃  CTRL   ┃   ALT   ┃   GUI   ┃         ┃  <- HRM (Miryoku)
 //         ┣━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━┫                     ┣━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━┫
 //         ┃   [/{   ┃    Z    ┃    X    ┃    C    ┃    V    ┃    B    ┃                     ┃    N    ┃    M    ┃   ,/<   ┃   ./>   ┃   //?   ┃   ]/}   ┃
 //         ┗━━━━━━━━━┻━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━┓ ┏━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━┻━━━━━━━━━┛
@@ -333,7 +420,7 @@
 // ╷         ╷         ╷         ╷         ╷         ╷         ╷   ╷         ╷         ╷         ╷         ╷         ╷         ╷
 &none       &none     &none     &none      &none      &none          &none    &none     &none      &none      &none      &none
 &kp ENTER   &kp Q     &kp W     &kp E      &kp R      &kp T          &kp Y    &td_u     &kp I      &td_o      &kp P      &kp BSPC
-&kp TAB     &td_a     &kp S     &kp D      &kp F      &kp G          &kp H    &kp J     &kp K      &kp L      &td_semi   &td_apos
+&kp TAB     &hml_td_a LGUI 0  &hml LALT S  &hml LCTRL D  &hml LSHFT F  &kp G    &kp H  &hmr RSHFT J  &hmr RCTRL K  &hmr LALT L  &hmr_td_semi RGUI 0  &td_apos
 &td_lbkt    &kp Z     &kp X     &kp C      &kp V      &kp B          &kp N    &kp M     &td_comma  &td_dot    &td_fslh   &td_rbkt
             &mo 4     &kp LALT  &kp LGUI   &kp SPACE  &mo 2          &mo 1    &kp LSHFT &kp RGUI   &kp RALT   &mo 3
             >;
