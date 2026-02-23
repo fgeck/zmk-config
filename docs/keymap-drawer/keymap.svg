@@ -216,8 +216,7 @@ svg.keymap {
 .keypos-30 text.key.shifted { fill: #e65100; }
 /* Hold legends (Nav arrows ⌘←, ⌥⌫, etc.) - teal text */
 text.key.hold { fill: #00838f; }
-/* Shift key (position 42) - orange background, only on Fn layer */
-.layer-Fn .keypos-42 rect { fill: #ffe0b2; }
+
 /* Transparent keys - light gray */
 rect.trans { fill: #f3f3f3; }
 /* Ghost/empty keys */
@@ -241,7 +240,7 @@ rect.held { fill: #e6b8af; }
   .keypos-6 text.key.shifted, .keypos-18 text.key.shifted,
   .keypos-30 text.key.shifted { fill: #ffb74d; }
   text.key.hold { fill: #4dd0e1; }
-  .layer-Fn .keypos-42 rect { fill: #5d4037; }
+
   rect.trans { fill: #2a2a2a; }
   rect.ghost { fill: #1a1a1a; }
   .layer-activator rect { fill: #274e13; }
@@ -1401,4 +1400,4 @@ rect.held { fill: #e6b8af; }
 </g>
 </g>
 </g>
-<text x="926.0" y="2056.0" class="footer"><tspan style="font-size: 10px;"><tspan fill="#cfe2f3">■</tspan> Home Row Mods   <tspan fill="#7b1fa2">■</tspan> Tap-Dance   <tspan fill="#e65100">■</tspan> Shift+Tap   <tspan fill="#00838f">■</tspan> Hold   <tspan fill="#d9ead3">■</tspan> Layer   <tspan fill="#fff2cc">■</tspan> Combo   <tspan fill="#ffe0b2">■</tspan> Shift Key</tspan></text></svg>
+<text x="926.0" y="2056.0" class="footer"><tspan style="font-size: 10px;"><tspan fill="#cfe2f3">■</tspan> Home Row Mods   <tspan fill="#7b1fa2">■</tspan> Tap-Dance   <tspan fill="#e65100">■</tspan> Shift+Tap   <tspan fill="#00838f">■</tspan> Hold   <tspan fill="#d9ead3">■</tspan> Layer   <tspan fill="#fff2cc">■</tspan> Combo</tspan></text></svg>
