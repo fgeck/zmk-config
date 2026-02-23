@@ -47,7 +47,7 @@
 // ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
 //
 //   Tap-Dance Behaviors (double-tap for alternate):
-//     - a → ä    - o → ö    - u → ü   (German umlauts via Option+key, requires "U.S. with German Umlauts" layout)
+//     - a → ä    - o → ö    - u → ü   (German umlauts via dead key: Option+U then vowel, works on standard U.S. layout)
 //     - ; → :    - ' → "    - - → ~
 //     - / → ?    - , → <    - . → >
 //     - [ → {    - ] → }
@@ -291,24 +291,32 @@
     };
 
     macros {
+        // German Umlauts via dead key sequences (works on standard U.S. keyboard layout)
+        // Option+U produces dead umlaut (¨), then press the vowel
         umlaut_a: umlaut_a {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LA(A)>;
+            wait-ms = <10>;
+            tap-ms = <10>;
+            bindings = <&kp LA(U) &kp A>;
             label = "UMLAUT_A";
         };
 
         umlaut_o: umlaut_o {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LA(O)>;
+            wait-ms = <10>;
+            tap-ms = <10>;
+            bindings = <&kp LA(U) &kp O>;
             label = "UMLAUT_O";
         };
 
         umlaut_u: umlaut_u {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LA(U)>;
+            wait-ms = <10>;
+            tap-ms = <10>;
+            bindings = <&kp LA(U) &kp U>;
             label = "UMLAUT_U";
         };
 
