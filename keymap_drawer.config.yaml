@@ -24,16 +24,19 @@ parse_config:
     "&sk LCTRL": Sticky ⌃
     "&sk LSHFT": Sticky ⇧
 
-    "&td_a": {t: a, s: ä}
-    "&td_o": {t: o, s: ö}
-    "&td_u": {t: u, s: ü}
-    "&td_semi": {t: ";", s: ":"}
-    "&td_apos": {t: "'", s: '"'}
-    "&td_comma": {t: ",", s: "<"}
-    "&td_dot": {t: ".", s: ">"}
-    "&td_fslh": {t: "/", s: "?"}
-    "&td_lbkt": {t: "[", s: "{"}
-    "&td_rbkt": {t: "]", s: "}"}
+    "&td_a": { t: a, s: ä }
+    "&td_o": { t: o, s: ö }
+    "&td_u": { t: u, s: ü }
+    "&td_semi": { t: ";", s: ":" }
+
+    "&hml_td_a LGUI 0": { t: a, h: "$$mdi:apple-keyboard-command$$", s: ä }
+    "&hmr_td_semi RGUI 0": { t: ";", h: "$$mdi:apple-keyboard-command$$", s: ":" }
+    "&td_apos": { t: "'", s: '"' }
+    "&td_comma": { t: ",", s: "<" }
+    "&td_dot": { t: ".", s: ">" }
+    "&td_fslh": { t: "/", s: "?" }
+    "&td_lbkt": { t: "[", s: "{" }
+    "&td_rbkt": { t: "]", s: "}" }
 
     "&idea_back": "$$mdi:arrow-left-bold$$"
     "&idea_fwd": "$$mdi:arrow-right-bold$$"
@@ -43,23 +46,23 @@ parse_config:
     "&double_shift": "⇧⇧"
     "&mac_lock": "$$mdi:lock$$"
 
-    "&bt0": {t: BT1, s: Clr}
-    "&bt1": {t: BT2, s: Clr}
-    "&bt2": {t: BT3, s: Clr}
-    "&bt3": {t: BT4, s: Clr}
-    "&bt4": {t: BT5, s: Clr}
+    "&bt0": { t: BT1, s: Clr }
+    "&bt1": { t: BT2, s: Clr }
+    "&bt2": { t: BT3, s: Clr }
+    "&bt3": { t: BT4, s: Clr }
+    "&bt4": { t: BT5, s: Clr }
     "&bt_clr_0": BT Clr 1
     "&bt_clr_1": BT Clr 2
     "&bt_clr_2": BT Clr 3
     "&bt_clr_3": BT Clr 4
     "&bt_clr_4": BT Clr 5
 
-    "&nav_left LG(LEFT) LEFT": {t: "$$mdi:arrow-left$$", h: "⌘←"}
-    "&nav_right LG(RIGHT) RIGHT": {t: "$$mdi:arrow-right$$", h: "⌘→"}
-    "&nav_up LG(UP) UP": {t: "$$mdi:arrow-up$$", h: "⌘↑"}
-    "&nav_down LG(DOWN) DOWN": {t: "$$mdi:arrow-down$$", h: "⌘↓"}
-    "&nav_bspc LA(BSPC) BSPC": {t: "$$mdi:backspace-outline$$", h: "⌥⌫"}
-    "&nav_del LA(DEL) DEL": {t: Del, h: "⌥Del"}
+    "&nav_left LG(LEFT) LEFT": { t: "$$mdi:arrow-left$$", h: "⌘←" }
+    "&nav_right LG(RIGHT) RIGHT": { t: "$$mdi:arrow-right$$", h: "⌘→" }
+    "&nav_up LG(UP) UP": { t: "$$mdi:arrow-up$$", h: "⌘↑" }
+    "&nav_down LG(DOWN) DOWN": { t: "$$mdi:arrow-down$$", h: "⌘↓" }
+    "&nav_bspc LA(BSPC) BSPC": { t: "$$mdi:backspace-outline$$", h: "⌥⌫" }
+    "&nav_del LA(DEL) DEL": { t: Del, h: "⌥Del" }
 
   trans_legend:
     t: ""
@@ -216,8 +219,9 @@ draw_config:
     .keypos-13 .hold.glyph, .keypos-22 .hold.glyph { fill: #00838f; }
     /* Tap-dance double-tap legends - purple text */
     .keypos-7 text.key.shifted, .keypos-9 text.key.shifted, .keypos-13 text.key.shifted,
-    .keypos-23 text.key.shifted, .keypos-24 text.key.shifted, .keypos-35 text.key.shifted,
-    .keypos-32 text.key.shifted, .keypos-33 text.key.shifted, .keypos-34 text.key.shifted { fill: #7b1fa2; }
+    .keypos-22 text.key.shifted, .keypos-23 text.key.shifted, .keypos-24 text.key.shifted,
+    .keypos-32 text.key.shifted, .keypos-33 text.key.shifted, .keypos-34 text.key.shifted,
+    .keypos-35 text.key.shifted { fill: #7b1fa2; }
     /* Shift+tap legends (BT Clr) - orange text */
     .keypos-6 text.key.shifted, .keypos-18 text.key.shifted,
     .keypos-30 text.key.shifted { fill: #e65100; }
@@ -242,8 +246,9 @@ draw_config:
       }
       .keypos-13 .hold.glyph, .keypos-22 .hold.glyph { fill: #4dd0e1; }
       .keypos-7 text.key.shifted, .keypos-9 text.key.shifted, .keypos-13 text.key.shifted,
-      .keypos-23 text.key.shifted, .keypos-24 text.key.shifted, .keypos-35 text.key.shifted,
-      .keypos-32 text.key.shifted, .keypos-33 text.key.shifted, .keypos-34 text.key.shifted { fill: #ce93d8; }
+      .keypos-22 text.key.shifted, .keypos-23 text.key.shifted, .keypos-24 text.key.shifted,
+      .keypos-32 text.key.shifted, .keypos-33 text.key.shifted, .keypos-34 text.key.shifted,
+      .keypos-35 text.key.shifted { fill: #ce93d8; }
       .keypos-6 text.key.shifted, .keypos-18 text.key.shifted,
       .keypos-30 text.key.shifted { fill: #ffb74d; }
       text.key.hold { fill: #4dd0e1; }

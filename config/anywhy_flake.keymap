@@ -110,6 +110,8 @@
         };
 
         // HRM variants for tap-dance keys (A→ä on left, ;→: on right)
+        // Uses #binding-cells = <2>: first param for &kp (hold mod), second is ignored (tap-dance takes 0 params)
+        // Usage: &hml_td_a LGUI 0  (the 0 is a dummy parameter)
         hml_td_a: home_row_mod_left_td_a {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
@@ -129,7 +131,7 @@
             tapping-term-ms = <280>;
             quick-tap-ms = <QUICK_TAP_MS>;
             require-prior-idle-ms = <150>;
-            bindings = <&kp>, <&kp>;
+            bindings = <&kp>, <&td_semi>;
             hold-trigger-key-positions = <KEYS_L THUMBS>;
             hold-trigger-on-release;
         };
@@ -221,6 +223,28 @@
         //
         // Combo timing: 30ms term, 50ms idle (slower than horizontal for reliability)
         // ─────────────────────────────────────────────────────────────────────────────
+
+        // ESC combo (bottom right corner)
+        combo_esc {  // / + ] -> ESC
+            bindings = <&kp ESC>;
+            key-positions = <46 47>;
+            timeout-ms = <30>;
+            require-prior-idle-ms = <50>;
+        };
+
+        // Enter combos (home row horizontal)
+        combo_enter_right {  // J+K+L -> Enter
+            bindings = <&kp ENTER>;
+            key-positions = <31 32 33>;
+            timeout-ms = <30>;
+            require-prior-idle-ms = <50>;
+        };
+        combo_enter_left {  // S+D+F -> Enter
+            bindings = <&kp ENTER>;
+            key-positions = <26 27 28>;
+            timeout-ms = <30>;
+            require-prior-idle-ms = <50>;
+        };
 
         // Left hand: Top + Home row
         combo_excl {  // Q+A -> !
@@ -738,8 +762,8 @@
 //         ┃   TAB   ┃ CMD+    ┃ CMD+    ┃ CMD+    ┃ CMD+    ┃ CMD+    ┃                     ┃  F2     ┃         ┃         ┃         ┃         ┃         ┃
 //         ┃         ┃ Shift+1 ┃ Shift+2 ┃ Shift+3 ┃ Shift+4 ┃ Shift+5 ┃                     ┃ go err  ┃         ┃         ┃         ┃         ┃         ┃
 //         ┣━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━┫                     ┣━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━┫
-//         ┃         ┃ CTRL+1  ┃ CTRL+2  ┃ CTRL+3  ┃ CTRL+4  ┃ CTRL+5  ┃                     ┃ 2xShift ┃CMD+SHIFT┃CMD+SHIFT┃ CTRL+T  ┃         ┃  ESC    ┃
-//         ┃         ┃         ┃         ┃         ┃         ┃         ┃                     ┃         ┃  +F     ┃  +R     ┃         ┃         ┃         ┃
+//         ┃         ┃ CTRL+1  ┃ CTRL+2  ┃ CTRL+3  ┃ CTRL+4  ┃ CTRL+5  ┃                     ┃ 2xShift ┃CMD+SHIFT┃CMD+SHIFT┃ SHIFT+F6┃         ┃  ESC    ┃
+//         ┃         ┃         ┃         ┃         ┃         ┃         ┃                     ┃         ┃  +F     ┃  +R     ┃ Rename  ┃         ┃         ┃
 //         ┗━━━━━━━━━┻━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━┓ ┏━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━┻━━━━━━━━━┛
 //                             ┃  ████   ┃   ALT   ┃   GUI   ┃  SPACE  ┃   NAV   ┃ ┃   NUM   ┃  SHIFT  ┃   GUI   ┃   ALT   ┃   FN    ┃
 //                             ┗━━━━━━━━━┻━━━━━━━━━┻━━━━━━━━━┻━━━━━━━━━┻━━━━━━━━━┛ ┗━━━━━━━━━┻━━━━━━━━━┻━━━━━━━━━┻━━━━━━━━━┻━━━━━━━━━┛
@@ -750,7 +774,7 @@
 &none        &none        &none        &none        &none        &none             &none          &none          &none          &none        &none      &none
 &kp ENTER    &kp LG(N1)   &kp LG(N2)   &kp LG(N3)   &kp LG(N4)   &kp LG(N5)        &idea_back     &idea_fwd      &kp LG(B)      &idea_impl   &none      &kp BSPC
 &kp TAB      &kp LG(LS(N1)) &kp LG(LS(N2)) &kp LG(LS(N3)) &kp LG(LS(N4)) &kp LG(LS(N5))  &kp F2   &none          &none          &none        &none      &none
-&none        &kp LC(N1)   &kp LC(N2)   &kp LC(N3)   &kp LC(N4)   &kp LC(N5)        &double_shift  &idea_find     &idea_replace  &kp LC(T)    &none      &kp ESC
+&none        &kp LC(N1)   &kp LC(N2)   &kp LC(N3)   &kp LC(N4)   &kp LC(N5)        &double_shift  &idea_find     &idea_replace  &kp LS(F6)   &none      &kp ESC
              &none        &trans       &trans       &trans       &mo 2             &mo 1          &trans         &trans         &trans       &trans
             >;
         };
