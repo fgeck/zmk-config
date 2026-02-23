@@ -129,9 +129,69 @@
             tapping-term-ms = <280>;
             quick-tap-ms = <QUICK_TAP_MS>;
             require-prior-idle-ms = <150>;
-            bindings = <&kp>, <&td_semi>;
+            bindings = <&kp>, <&kp>;
             hold-trigger-key-positions = <KEYS_L THUMBS>;
             hold-trigger-on-release;
+        };
+
+        // ─────────────────────────────────────────────────────────────────────────────
+        // NAV Layer Hold-Tap Behaviors
+        // Tap = arrow key, Hold = extended navigation
+        // macOS: Cmd+Left/Right = Home/End of line, Cmd+Up/Down = Begin/End of document
+        //        Alt+Backspace = Delete word backward, Alt+Delete (Fn+Backspace) = Delete word forward
+        // ─────────────────────────────────────────────────────────────────────────────
+        nav_left: nav_arrow_left {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "balanced";
+            tapping-term-ms = <200>;
+            quick-tap-ms = <QUICK_TAP_MS>;
+            bindings = <&kp>, <&kp>;
+        };
+
+        nav_right: nav_arrow_right {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "balanced";
+            tapping-term-ms = <200>;
+            quick-tap-ms = <QUICK_TAP_MS>;
+            bindings = <&kp>, <&kp>;
+        };
+
+        nav_up: nav_arrow_up {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "balanced";
+            tapping-term-ms = <200>;
+            quick-tap-ms = <QUICK_TAP_MS>;
+            bindings = <&kp>, <&kp>;
+        };
+
+        nav_down: nav_arrow_down {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "balanced";
+            tapping-term-ms = <200>;
+            quick-tap-ms = <QUICK_TAP_MS>;
+            bindings = <&kp>, <&kp>;
+        };
+
+        nav_bspc: nav_backspace {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "balanced";
+            tapping-term-ms = <200>;
+            quick-tap-ms = <QUICK_TAP_MS>;
+            bindings = <&kp>, <&kp>;
+        };
+
+        nav_del: nav_delete {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "balanced";
+            tapping-term-ms = <200>;
+            quick-tap-ms = <QUICK_TAP_MS>;
+            bindings = <&kp>, <&kp>;
         };
     };
 
@@ -608,9 +668,9 @@
 //         ┏╍╍╍╍╍╍╍╍╍┳╍╍╍╍╍╍╍╍╍┳╍╍╍╍╍╍╍╍╍┳╍╍╍╍╍╍╍╍╍┳╍╍╍╍╍╍╍╍╍┳╍╍╍╍╍╍╍╍╍┓                     ┏╍╍╍╍╍╍╍╍╍┳╍╍╍╍╍╍╍╍╍┳╍╍╍╍╍╍╍╍╍┳╍╍╍╍╍╍╍╍╍┳╍╍╍╍╍╍╍╍╍┳╍╍╍╍╍╍╍╍╍┓
 //         ┃ ------  ┃ ------  ┃ ------  ┃ ------  ┃ ------  ┃ ------  ┃                     ┃ ------  ┃ ------  ┃ ------  ┃ ------  ┃ ------  ┃ ------  ┃  <- Row 0: L only (not on M)
 //         ┣━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━┫                     ┣━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━┫
-//         ┃  ENTER  ┃         ┃         ┃         ┃         ┃         ┃                     ┃  Redo   ┃  Paste  ┃  Copy   ┃   Cut   ┃  Undo   ┃  BSPC   ┃
+//         ┃  ENTER  ┃         ┃         ┃         ┃         ┃         ┃                     ┃  Redo   ┃  Paste  ┃  Copy   ┃   Cut   ┃  Undo   ┃BSPC/Wrd ┃
 //         ┣━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━┫                     ┣━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━┫
-//         ┃   TAB   ┃ sk_GUI  ┃ sk_ALT  ┃ sk_CTRL ┃ sk_SHFT ┃         ┃                     ┃    ←    ┃    ↓    ┃    ↑    ┃    →    ┃         ┃         ┃
+//         ┃   TAB   ┃ sk_GUI  ┃ sk_ALT  ┃ sk_CTRL ┃ sk_SHFT ┃         ┃                     ┃  ←/Ln   ┃  ↓/Doc↓ ┃  ↑/Doc↑ ┃  →/Ln   ┃DEL/Wrd  ┃         ┃
 //         ┣━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━┫                     ┣━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━┫
 //         ┃         ┃         ┃         ┃         ┃         ┃         ┃                     ┃         ┃  Home   ┃  PgDn   ┃  PgUp   ┃   End   ┃   ESC   ┃
 //         ┗━━━━━━━━━┻━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━┓ ┏━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━┻━━━━━━━━━┛
@@ -618,13 +678,15 @@
 //                             ┗━━━━━━━━━┻━━━━━━━━━┻━━━━━━━━━┻━━━━━━━━━┻━━━━━━━━━┛ ┗━━━━━━━━━┻━━━━━━━━━┻━━━━━━━━━┻━━━━━━━━━┻━━━━━━━━━┛
 //
 //         Clipboard: macOS uses Cmd (LG) - Redo=Cmd+Shift+Z, Paste=Cmd+V, Copy=Cmd+C, Cut=Cmd+X, Undo=Cmd+Z
+//         Arrows: Tap=arrow, Hold=extended navigation (←/→=line start/end, ↑/↓=doc start/end)
+//         Delete: Tap=single char, Hold=word delete (Backspace=Alt+Bspc, Delete=Alt+Del)
             bindings = <
-// ╷           ╷         ╷         ╷          ╷          ╷         ╷   ╷            ╷         ╷         ╷         ╷         ╷         ╷
-&none        &none      &none      &none      &none      &none          &none        &none      &none      &none      &none      &none
-&kp ENTER    &none      &none      &none      &none      &none          &kp LG(LS(Z)) &kp LG(V) &kp LG(C)  &kp LG(X)  &kp LG(Z)  &kp BSPC
-&kp TAB      &sk LGUI   &sk LALT   &sk LCTRL  &sk LSHFT  &none          &kp LEFT     &kp DOWN   &kp UP     &kp RIGHT  &none      &none
-&none        &none      &none      &none      &none      &none          &none        &kp HOME   &kp PG_DN  &kp PG_UP  &kp END    &kp ESC
-             &trans     &trans     &trans     &trans     &none          &mo 1        &trans     &trans     &trans     &trans
+// ╷           ╷         ╷         ╷          ╷          ╷         ╷   ╷                     ╷                    ╷                  ╷                     ╷                    ╷         ╷
+&none        &none      &none      &none      &none      &none          &none                &none                &none              &none                 &none                &none
+&kp ENTER    &none      &none      &none      &none      &none          &kp LG(LS(Z))        &kp LG(V)            &kp LG(C)          &kp LG(X)             &kp LG(Z)            &nav_bspc LA(BSPC) BSPC
+&kp TAB      &sk LGUI   &sk LALT   &sk LCTRL  &sk LSHFT  &none          &nav_left LG(LEFT) LEFT  &nav_down LG(DOWN) DOWN  &nav_up LG(UP) UP  &nav_right LG(RIGHT) RIGHT  &nav_del LA(DEL) DEL  &none
+&none        &none      &none      &none      &none      &none          &none                &kp HOME             &kp PG_DN          &kp PG_UP             &kp END              &kp ESC
+             &trans     &trans     &trans     &trans     &none          &mo 1                &trans               &trans             &trans                &trans
             >;
         };
 
