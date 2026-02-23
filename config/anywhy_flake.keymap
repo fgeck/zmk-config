@@ -149,6 +149,145 @@
             key-positions = <30 18>;
             layers = <3>;
         };
+
+        // ─────────────────────────────────────────────────────────────────────────────
+        // Vertical Combos - Symbols (urob style)
+        // Press two vertically adjacent keys simultaneously
+        //
+        // Key positions (Flake L format):
+        //   Row 1 (top):    13=Q  14=W  15=E  16=R  17=T  |  18=Y  19=U  20=I  21=O  22=P
+        //   Row 2 (home):   25=A  26=S  27=D  28=F  29=G  |  30=H  31=J  32=K  33=L  34=;
+        //   Row 3 (bottom): 37=Z  38=X  39=C  40=V  41=B  |  42=N  43=M  44=,  45=.  46=/
+        //
+        // Combo timing: 30ms term, 50ms idle (slower than horizontal for reliability)
+        // ─────────────────────────────────────────────────────────────────────────────
+
+        // Left hand: Top + Home row
+        combo_excl {  // Q+A -> !
+            bindings = <&kp EXCL>;
+            key-positions = <13 25>;
+            timeout-ms = <30>;
+            require-prior-idle-ms = <50>;
+            layers = <0 1 2>;
+        };
+        combo_at {  // W+S -> @
+            bindings = <&kp AT>;
+            key-positions = <14 26>;
+            timeout-ms = <30>;
+            require-prior-idle-ms = <50>;
+            layers = <0 1 2>;
+        };
+        combo_hash {  // E+D -> #
+            bindings = <&kp HASH>;
+            key-positions = <15 27>;
+            timeout-ms = <30>;
+            require-prior-idle-ms = <50>;
+            layers = <0 1 2>;
+        };
+        combo_dllr {  // R+F -> $
+            bindings = <&kp DLLR>;
+            key-positions = <16 28>;
+            timeout-ms = <30>;
+            require-prior-idle-ms = <50>;
+            layers = <0 1 2>;
+        };
+        combo_prcnt {  // T+G -> %
+            bindings = <&kp PRCNT>;
+            key-positions = <17 29>;
+            timeout-ms = <30>;
+            require-prior-idle-ms = <50>;
+            layers = <0 1 2>;
+        };
+
+        // Left hand: Home + Bottom row
+        combo_grave {  // A+Z -> `
+            bindings = <&kp GRAVE>;
+            key-positions = <25 37>;
+            timeout-ms = <30>;
+            require-prior-idle-ms = <50>;
+            layers = <0 1 2>;
+        };
+        combo_bslh {  // S+X -> backslash
+            bindings = <&kp BSLH>;
+            key-positions = <26 38>;
+            timeout-ms = <30>;
+            require-prior-idle-ms = <50>;
+            layers = <0 1 2>;
+        };
+        combo_equal {  // D+C -> =
+            bindings = <&kp EQUAL>;
+            key-positions = <27 39>;
+            timeout-ms = <30>;
+            require-prior-idle-ms = <50>;
+            layers = <0 1 2>;
+        };
+        combo_tilde {  // F+V -> ~
+            bindings = <&kp TILDE>;
+            key-positions = <28 40>;
+            timeout-ms = <30>;
+            require-prior-idle-ms = <50>;
+            layers = <0 1 2>;
+        };
+
+        // Right hand: Top + Home row
+        combo_caret {  // Y+H -> ^
+            bindings = <&kp CARET>;
+            key-positions = <18 30>;
+            timeout-ms = <30>;
+            require-prior-idle-ms = <50>;
+            layers = <0 1 2>;
+        };
+        combo_plus {  // U+J -> +
+            bindings = <&kp PLUS>;
+            key-positions = <19 31>;
+            timeout-ms = <30>;
+            require-prior-idle-ms = <50>;
+            layers = <0 1 2>;
+        };
+        combo_star {  // I+K -> *
+            bindings = <&kp STAR>;
+            key-positions = <20 32>;
+            timeout-ms = <30>;
+            require-prior-idle-ms = <50>;
+            layers = <0 1 2>;
+        };
+        combo_amps {  // O+L -> &
+            bindings = <&kp AMPS>;
+            key-positions = <21 33>;
+            timeout-ms = <30>;
+            require-prior-idle-ms = <50>;
+            layers = <0 1 2>;
+        };
+
+        // Right hand: Home + Bottom row
+        combo_under {  // H+N -> _
+            bindings = <&kp UNDER>;
+            key-positions = <30 42>;
+            timeout-ms = <30>;
+            require-prior-idle-ms = <50>;
+            layers = <0 1 2>;
+        };
+        combo_minus {  // J+M -> -
+            bindings = <&kp MINUS>;
+            key-positions = <31 43>;
+            timeout-ms = <30>;
+            require-prior-idle-ms = <50>;
+            layers = <0 1 2>;
+        };
+        combo_fslh {  // K+, -> /
+            bindings = <&kp FSLH>;
+            key-positions = <32 44>;
+            timeout-ms = <30>;
+            require-prior-idle-ms = <50>;
+            layers = <0 1 2>;
+        };
+        combo_pipe {  // L+. -> |
+            bindings = <&kp PIPE>;
+            key-positions = <33 45>;
+            timeout-ms = <30>;
+            require-prior-idle-ms = <50>;
+            layers = <0 1 2>;
+        };
     };
 
     macros {
