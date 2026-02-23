@@ -1,0 +1,257 @@
+parse_config:
+  raw_binding_map:
+    "&sys_reset": Reset
+    "&bootloader": Boot
+    "&caps_word": Caps Word
+    "&soft_off": Soft Off
+    "&studio_unlock": Studio
+
+    "&bt BT_SEL 0": BT 1
+    "&bt BT_SEL 1": BT 2
+    "&bt BT_SEL 2": BT 3
+    "&bt BT_SEL 3": BT 4
+    "&bt BT_SEL 4": BT 5
+    "&bt BT_CLR": BT Clear
+
+    "&kp LG(Z)": Undo
+    "&kp LG(X)": Cut
+    "&kp LG(C)": Copy
+    "&kp LG(V)": Paste
+    "&kp LG(LS(Z))": Redo
+
+    "&sk LGUI": Sticky ⌘
+    "&sk LALT": Sticky ⌥
+    "&sk LCTRL": Sticky ⌃
+    "&sk LSHFT": Sticky ⇧
+
+    "&td_a": {t: a, s: ä}
+    "&td_o": {t: o, s: ö}
+    "&td_u": {t: u, s: ü}
+    "&td_semi": {t: ";", s: ":"}
+    "&td_apos": {t: "'", s: '"'}
+    "&td_comma": {t: ",", s: "<"}
+    "&td_dot": {t: ".", s: ">"}
+    "&td_fslh": {t: "/", s: "?"}
+    "&td_lbkt": {t: "[", s: "{"}
+    "&td_rbkt": {t: "]", s: "}"}
+
+    "&idea_back": "$$mdi:arrow-left-bold$$"
+    "&idea_fwd": "$$mdi:arrow-right-bold$$"
+    "&idea_impl": Impl
+    "&idea_find": Find
+    "&idea_replace": Replace
+    "&double_shift": "⇧⇧"
+    "&mac_lock": "$$mdi:lock$$"
+
+    "&bt0": {t: BT1, s: Clr}
+    "&bt1": {t: BT2, s: Clr}
+    "&bt2": {t: BT3, s: Clr}
+    "&bt3": {t: BT4, s: Clr}
+    "&bt4": {t: BT5, s: Clr}
+    "&bt_clr_0": BT Clr 1
+    "&bt_clr_1": BT Clr 2
+    "&bt_clr_2": BT Clr 3
+    "&bt_clr_3": BT Clr 4
+    "&bt_clr_4": BT Clr 5
+
+    "&nav_left LG(LEFT) LEFT": {t: "$$mdi:arrow-left$$", h: "⌘←"}
+    "&nav_right LG(RIGHT) RIGHT": {t: "$$mdi:arrow-right$$", h: "⌘→"}
+    "&nav_up LG(UP) UP": {t: "$$mdi:arrow-up$$", h: "⌘↑"}
+    "&nav_down LG(DOWN) DOWN": {t: "$$mdi:arrow-down$$", h: "⌘↓"}
+    "&nav_bspc LA(BSPC) BSPC": {t: "$$mdi:backspace-outline$$", h: "⌥⌫"}
+    "&nav_del LA(DEL) DEL": {t: Del, h: "⌥Del"}
+
+  trans_legend:
+    t: ""
+    type: trans
+
+  zmk_keycode_map:
+    LALT: Alt
+    RALT: Alt
+    LCTRL: Ctrl
+    RCTRL: Ctrl
+    LGUI: "$$mdi:apple-keyboard-command$$"
+    RGUI: "$$mdi:apple-keyboard-command$$"
+    LSHFT: Shift
+    RSHFT: Shift
+
+    BSPC: "$$mdi:backspace-outline$$"
+    DEL: Del
+    ESC: Esc
+    RET: "$$mdi:keyboard-return$$"
+    ENTER: "$$mdi:keyboard-return$$"
+    SPACE: "$$mdi:keyboard-space$$"
+    TAB: "$$mdi:keyboard-tab$$"
+
+    PG_UP: PgUp
+    PG_DN: PgDn
+    INS: Ins
+    HOME: Home
+    END: End
+
+    UP: "$$mdi:arrow-up$$"
+    DOWN: "$$mdi:arrow-down$$"
+    LEFT: "$$mdi:arrow-left$$"
+    RIGHT: "$$mdi:arrow-right$$"
+
+    C_MUTE: "$$mdi:volume-off$$"
+    C_PP: "$$mdi:play-pause$$"
+    C_VOL_UP: "$$mdi:volume-high$$"
+    C_VOL_DN: "$$mdi:volume-medium$$"
+    C_NEXT: "$$mdi:skip-forward$$"
+    C_PREV: "$$mdi:skip-backward$$"
+    C_BRI_UP: "$$mdi:brightness-7$$"
+    C_BRI_DN: "$$mdi:brightness-5$$"
+
+    F1: F1
+    F2: F2
+    F3: F3
+    F4: F4
+    F5: F5
+    F6: F6
+    F7: F7
+    F8: F8
+    F9: F9
+    F10: F10
+    F11: F11
+    F12: F12
+
+    AMPERSAND: "&"
+    AMPS: "&"
+    APOS: "'"
+    APOSTROPHE: "'"
+    ASTERISK: "*"
+    ASTRK: "*"
+    AT: "@"
+    AT_SIGN: "@"
+    BACKSLASH: \
+    BSLH: \
+    CARET: ^
+    COLON: ":"
+    COMMA: ","
+    DLLR: $
+    DOLLAR: $
+    DOT: .
+    DOUBLE_QUOTES: '"'
+    DQT: '"'
+    EQUAL: "="
+    EXCL: "!"
+    EXCLAMATION: "!"
+    FSLH: /
+    GRAVE: "`"
+    GREATER_THAN: ">"
+    GT: ">"
+    HASH: "#"
+    LBKT: "["
+    LBRC: "{"
+    LEFT_BRACE: "{"
+    LEFT_BRACKET: "["
+    LEFT_PARENTHESIS: (
+    LESS_THAN: <
+    LPAR: (
+    LT: <
+    MINUS: "-"
+    NON_US_BACKSLASH: \
+    NON_US_BSLH: "|"
+    NON_US_HASH: "#"
+    NUHS: "#"
+    PERCENT: "%"
+    PERIOD: .
+    PIPE: "|"
+    PIPE2: "|"
+    PLUS: +
+    POUND: "#"
+    PRCNT: "%"
+    QMARK: "?"
+    QUESTION: "?"
+    RBKT: "]"
+    RBRC: "}"
+    RIGHT_BRACE: "}"
+    RIGHT_BRACKET: "]"
+    RIGHT_PARENTHESIS: )
+    RPAR: )
+    SEMI: ;
+    SEMICOLON: ;
+    SINGLE_QUOTE: "'"
+    SLASH: /
+    SQT: "'"
+    STAR: "*"
+    TILDE: "~"
+    TILDE2: "~"
+    UNDER: _
+    UNDERSCORE: _
+
+    N0: "0"
+    N1: "1"
+    N2: "2"
+    N3: "3"
+    N4: "4"
+    N5: "5"
+    N6: "6"
+    N7: "7"
+    N8: "8"
+    N9: "9"
+
+draw_config:
+  append_colon_to_layer_header: false
+  dark_mode: auto
+  footer_text: '<tspan style="font-size: 10px;"><tspan fill="#cfe2f3">■</tspan> Home Row Mods   <tspan fill="#7b1fa2">■</tspan> Tap-Dance   <tspan fill="#e65100">■</tspan> Shift+Tap   <tspan fill="#00838f">■</tspan> Hold   <tspan fill="#d9ead3">■</tspan> Layer   <tspan fill="#fff2cc">■</tspan> Combo   <tspan fill="#ffe0b2">■</tspan> Shift Key</tspan>'
+  key_h: 56
+  key_w: 56
+  combo_h: 20
+  combo_w: 26
+  inner_pad_w: 2
+  inner_pad_h: 2
+  draw_key_sides: false
+  svg_extra_style: |
+    svg.keymap {
+      font-family: SFMono-Regular, Consolas, Liberation Mono, Menlo, monospace;
+    }
+    /* Home row mods - blue */
+    .keypos-13 rect, .keypos-14 rect, .keypos-15 rect, .keypos-16 rect,
+    .keypos-19 rect, .keypos-20 rect, .keypos-21 rect, .keypos-22 rect {
+      fill: #cfe2f3;
+    }
+    /* Home row mod hold text - same teal as other hold text */
+    .keypos-13 .hold.glyph, .keypos-22 .hold.glyph { fill: #00838f; }
+    /* Tap-dance double-tap legends - purple text */
+    .keypos-7 text.key.shifted, .keypos-9 text.key.shifted, .keypos-13 text.key.shifted,
+    .keypos-23 text.key.shifted, .keypos-24 text.key.shifted, .keypos-35 text.key.shifted,
+    .keypos-32 text.key.shifted, .keypos-33 text.key.shifted, .keypos-34 text.key.shifted { fill: #7b1fa2; }
+    /* Shift+tap legends (BT Clr) - orange text */
+    .keypos-6 text.key.shifted, .keypos-18 text.key.shifted,
+    .keypos-30 text.key.shifted { fill: #e65100; }
+    /* Hold legends (Nav arrows ⌘←, ⌥⌫, etc.) - teal text */
+    text.key.hold { fill: #00838f; }
+    /* Shift key (position 42) - orange background, only on Fn layer */
+    .layer-Fn .keypos-42 rect { fill: #ffe0b2; }
+    /* Transparent keys - light gray */
+    rect.trans { fill: #f3f3f3; }
+    /* Ghost/empty keys */
+    rect.ghost { fill: #fafafa; }
+    /* Layer activators - green */
+    .layer-activator rect { fill: #d9ead3; }
+    /* Combo boxes - yellow */
+    rect.combo { fill: #fff2cc; }
+    /* Held keys (layer active) */
+    rect.held { fill: #e6b8af; }
+    /* Dark mode */
+    @media (prefers-color-scheme: dark) {
+      .keypos-13 rect, .keypos-14 rect, .keypos-15 rect, .keypos-16 rect,
+      .keypos-19 rect, .keypos-20 rect, .keypos-21 rect, .keypos-22 rect {
+        fill: #1a3a5c;
+      }
+      .keypos-13 .hold.glyph, .keypos-22 .hold.glyph { fill: #4dd0e1; }
+      .keypos-7 text.key.shifted, .keypos-9 text.key.shifted, .keypos-13 text.key.shifted,
+      .keypos-23 text.key.shifted, .keypos-24 text.key.shifted, .keypos-35 text.key.shifted,
+      .keypos-32 text.key.shifted, .keypos-33 text.key.shifted, .keypos-34 text.key.shifted { fill: #ce93d8; }
+      .keypos-6 text.key.shifted, .keypos-18 text.key.shifted,
+      .keypos-30 text.key.shifted { fill: #ffb74d; }
+      text.key.hold { fill: #4dd0e1; }
+      .layer-Fn .keypos-42 rect { fill: #5d4037; }
+      rect.trans { fill: #2a2a2a; }
+      rect.ghost { fill: #1a1a1a; }
+      .layer-activator rect { fill: #274e13; }
+      rect.combo { fill: #7f6000; }
+      rect.held { fill: #5b3a3a; }
+    }

@@ -1,0 +1,43 @@
+version: '3'
+
+vars:
+  KEYMAP: config/anywhy_flake.keymap
+  CONFIG: keymap_drawer.config.yaml
+  LAYOUT: docs/keymap-drawer/anywhy_flake_m.json
+  OUTPUT: docs/keymap-drawer/keymap.svg
+  PYTHON: /Users/D068994/.local/pipx/venvs/keymap-drawer/bin/python
+  FILTER: scripts/filter-keymap-for-flake-m.py
+
+tasks:
+  default:
+    desc: Generate keymap SVG
+    cmds:
+      - task: draw
+
+  draw:
+    desc: Parse keymap and generate SVG
+    sources:
+      - "{{.KEYMAP}}"
+      - "{{.CONFIG}}"
+      - "{{.FILTER}}"
+      - "{{.LAYOUT}}"
+    generates:
+      - "{{.OUTPUT}}"
+    cmds:
+      - |
+        keymap -c {{.CONFIG}} parse -z {{.KEYMAP}} \
+          | {{.PYTHON}} {{.FILTER}} \
+          | keymap -c {{.CONFIG}} draw - -o {{.OUTPUT}}
+      - echo "Generated {{.OUTPUT}}"
+
+  parse:
+    desc: Parse keymap to YAML (for debugging)
+    cmds:
+      - |
+        keymap -c {{.CONFIG}} parse -z {{.KEYMAP}} \
+          | {{.PYTHON}} {{.FILTER}}
+
+  clean:
+    desc: Remove generated files
+    cmds:
+      - rm -f {{.OUTPUT}}

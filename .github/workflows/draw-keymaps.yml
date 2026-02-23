@@ -1,0 +1,33 @@
+name: Draw ZMK keymaps
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - "config/*.keymap"
+      - "config/*.dtsi"
+      - "keymap_drawer.config.yaml"
+      - "scripts/filter-keymap-for-flake-m.py"
+      - "docs/keymap-drawer/anywhy_flake_m.json"
+
+jobs:
+  draw:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install dependencies
+        run: pip install keymap-drawer pyyaml
+
+      - name: Generate keymap SVG
+        run: |
+          keymap -c keymap_drawer.config.yaml parse -z config/anywhy_flake.keymap \
+            | python scripts/filter-keymap-for-flake-m.py \
+            | keymap -c keymap_drawer.config.yaml draw - -o docs/keymap-drawer/keymap.svg
+
+      - name: Commit changes
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "keymap-drawer render"
+          file_pattern: "docs/keymap-drawer/*.svg"
