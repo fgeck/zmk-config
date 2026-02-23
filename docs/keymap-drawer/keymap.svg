@@ -209,8 +209,9 @@ svg.keymap {
 .keypos-13 .hold.glyph, .keypos-22 .hold.glyph { fill: #00838f; }
 /* Tap-dance double-tap legends - purple text */
 .keypos-7 text.key.shifted, .keypos-9 text.key.shifted, .keypos-13 text.key.shifted,
-.keypos-23 text.key.shifted, .keypos-24 text.key.shifted, .keypos-35 text.key.shifted,
-.keypos-32 text.key.shifted, .keypos-33 text.key.shifted, .keypos-34 text.key.shifted { fill: #7b1fa2; }
+.keypos-22 text.key.shifted, .keypos-23 text.key.shifted, .keypos-24 text.key.shifted,
+.keypos-32 text.key.shifted, .keypos-33 text.key.shifted, .keypos-34 text.key.shifted,
+.keypos-35 text.key.shifted { fill: #7b1fa2; }
 /* Shift+tap legends (BT Clr) - orange text */
 .keypos-6 text.key.shifted, .keypos-18 text.key.shifted,
 .keypos-30 text.key.shifted { fill: #e65100; }
@@ -235,8 +236,9 @@ rect.held { fill: #e6b8af; }
   }
   .keypos-13 .hold.glyph, .keypos-22 .hold.glyph { fill: #4dd0e1; }
   .keypos-7 text.key.shifted, .keypos-9 text.key.shifted, .keypos-13 text.key.shifted,
-  .keypos-23 text.key.shifted, .keypos-24 text.key.shifted, .keypos-35 text.key.shifted,
-  .keypos-32 text.key.shifted, .keypos-33 text.key.shifted, .keypos-34 text.key.shifted { fill: #ce93d8; }
+  .keypos-22 text.key.shifted, .keypos-23 text.key.shifted, .keypos-24 text.key.shifted,
+  .keypos-32 text.key.shifted, .keypos-33 text.key.shifted, .keypos-34 text.key.shifted,
+  .keypos-35 text.key.shifted { fill: #ce93d8; }
   .keypos-6 text.key.shifted, .keypos-18 text.key.shifted,
   .keypos-30 text.key.shifted { fill: #ffb74d; }
   text.key.hold { fill: #4dd0e1; }
@@ -351,8 +353,9 @@ rect.held { fill: #e6b8af; }
 </g>
 <g transform="translate(812, 126)" class="key keypos-22">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
-<text x="0" y="0" class="key tap">0</text>
+<text x="0" y="0" class="key tap">;</text>
 <use href="#mdi:apple-keyboard-command" xlink:href="#mdi:apple-keyboard-command" x="-6" y="12" height="12" width="12.0" class="key hold glyph mdi:apple-keyboard-command"/>
+<text x="0" y="-24" class="key shifted">:</text>
 </g>
 <g transform="translate(868, 126)" class="key keypos-23">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
@@ -610,70 +613,86 @@ rect.held { fill: #e6b8af; }
 <text x="588" y="62" class="combo shifted">Clr</text>
 </g>
 <g class="combo combopos-2">
+<rect rx="6" ry="6" x="827" y="172" width="26" height="20" class="combo"/>
+<text x="840" y="182" class="combo tap">Esc</text>
+</g>
+<g class="combo combopos-3">
+<path d="M700,93 l-37,3" class="combo"/>
+<path d="M700,93 l37,3" class="combo"/>
+<rect rx="6" ry="6" x="687" y="83" width="26" height="20" class="combo"/>
+<use href="#mdi:keyboard-return" xlink:href="#mdi:keyboard-return" x="693" y="86" height="14" width="14.0" class="combo tap glyph mdi:keyboard-return"/>
+</g>
+<g class="combo combopos-4">
+<path d="M196,93 l-37,3" class="combo"/>
+<path d="M196,93 l37,3" class="combo"/>
+<rect rx="6" ry="6" x="183" y="83" width="26" height="20" class="combo"/>
+<use href="#mdi:keyboard-return" xlink:href="#mdi:keyboard-return" x="189" y="86" height="14" width="14.0" class="combo tap glyph mdi:keyboard-return"/>
+</g>
+<g class="combo combopos-5">
 <rect rx="6" ry="6" x="71" y="88" width="26" height="20" class="combo"/>
 <text x="84" y="98" class="combo tap">!</text>
 </g>
-<g class="combo combopos-3">
+<g class="combo combopos-6">
 <rect rx="6" ry="6" x="127" y="60" width="26" height="20" class="combo"/>
 <text x="140" y="70" class="combo tap">@</text>
 </g>
-<g class="combo combopos-4">
+<g class="combo combopos-7">
 <rect rx="6" ry="6" x="183" y="46" width="26" height="20" class="combo"/>
 <text x="196" y="56" class="combo tap">#</text>
 </g>
-<g class="combo combopos-5">
+<g class="combo combopos-8">
 <rect rx="6" ry="6" x="239" y="60" width="26" height="20" class="combo"/>
 <text x="252" y="70" class="combo tap">$</text>
 </g>
-<g class="combo combopos-6">
+<g class="combo combopos-9">
 <rect rx="6" ry="6" x="295" y="60" width="26" height="20" class="combo"/>
 <text x="308" y="70" class="combo tap">%</text>
 </g>
-<g class="combo combopos-7">
+<g class="combo combopos-10">
 <rect rx="6" ry="6" x="71" y="144" width="26" height="20" class="combo"/>
 <text x="84" y="154" class="combo tap">`</text>
 </g>
-<g class="combo combopos-8">
+<g class="combo combopos-11">
 <rect rx="6" ry="6" x="127" y="116" width="26" height="20" class="combo"/>
 <text x="140" y="126" class="combo tap">\</text>
 </g>
-<g class="combo combopos-9">
+<g class="combo combopos-12">
 <rect rx="6" ry="6" x="183" y="102" width="26" height="20" class="combo"/>
 <text x="196" y="112" class="combo tap">=</text>
 </g>
-<g class="combo combopos-10">
+<g class="combo combopos-13">
 <rect rx="6" ry="6" x="239" y="116" width="26" height="20" class="combo"/>
 <text x="252" y="126" class="combo tap">~</text>
 </g>
-<g class="combo combopos-11">
+<g class="combo combopos-14">
 <rect rx="6" ry="6" x="575" y="60" width="26" height="20" class="combo"/>
 <text x="588" y="70" class="combo tap">^</text>
 </g>
-<g class="combo combopos-12">
+<g class="combo combopos-15">
 <rect rx="6" ry="6" x="631" y="60" width="26" height="20" class="combo"/>
 <text x="644" y="70" class="combo tap">+</text>
 </g>
-<g class="combo combopos-13">
+<g class="combo combopos-16">
 <rect rx="6" ry="6" x="687" y="46" width="26" height="20" class="combo"/>
 <text x="700" y="56" class="combo tap">*</text>
 </g>
-<g class="combo combopos-14">
+<g class="combo combopos-17">
 <rect rx="6" ry="6" x="743" y="60" width="26" height="20" class="combo"/>
 <text x="756" y="70" class="combo tap">&amp;</text>
 </g>
-<g class="combo combopos-15">
+<g class="combo combopos-18">
 <rect rx="6" ry="6" x="575" y="116" width="26" height="20" class="combo"/>
 <text x="588" y="126" class="combo tap">_</text>
 </g>
-<g class="combo combopos-16">
+<g class="combo combopos-19">
 <rect rx="6" ry="6" x="631" y="116" width="26" height="20" class="combo"/>
 <text x="644" y="126" class="combo tap">-</text>
 </g>
-<g class="combo combopos-17">
+<g class="combo combopos-20">
 <rect rx="6" ry="6" x="687" y="102" width="26" height="20" class="combo"/>
 <text x="700" y="112" class="combo tap">/</text>
 </g>
-<g class="combo combopos-18">
+<g class="combo combopos-21">
 <rect rx="6" ry="6" x="743" y="116" width="26" height="20" class="combo"/>
 <text x="756" y="126" class="combo tap">|</text>
 </g>
@@ -1355,7 +1374,7 @@ rect.held { fill: #e6b8af; }
 </g>
 <g transform="translate(756, 154)" class="key keypos-33">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
-<text x="0" y="0" class="key tap">Ctl+T</text>
+<text x="0" y="0" class="key tap">Sft+F6</text>
 </g>
 <g transform="translate(812, 182)" class="key keypos-34">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
