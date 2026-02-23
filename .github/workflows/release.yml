@@ -1,0 +1,44 @@
+name: Release firmware
+
+on:
+  push:
+    tags:
+      - "v*"
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    uses: zmkfirmware/zmk/.github/workflows/build-user-config.yml@main
+
+  release:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download firmware
+        uses: actions/download-artifact@v4
+        with:
+          path: firmware
+
+      - name: Prepare release files
+        run: |
+          mkdir -p release
+          find firmware -name "*.uf2" -exec cp {} release/ \;
+          cd release && zip -r ../firmware.zip .
+
+      - name: Create Release
+        uses: softprops/action-gh-release@v2
+        with:
+          name: ${{ github.ref_name }}
+          body: |
+            ## Firmware ${{ github.ref_name }}
+            
+            **Files:**
+            - `anywhy_flake_left_ble.uf2` - Left half
+            - `anywhy_flake_right_ble.uf2` - Right half
+            - `settings_reset.uf2` - Reset settings
+            - `firmware.zip` - All files bundled
+          files: |
+            release/*.uf2
+            firmware.zip

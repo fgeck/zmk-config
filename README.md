@@ -73,9 +73,13 @@ Inspired by [urob's nav cluster](https://github.com/urob/zmk-config?tab=readme-o
 - 5 profiles (BT1-BT5)
 - Clear profile: Shift + BTx on FN layer
 
-## Building
+## Firmware
 
-Firmware builds automatically via GitHub Actions on push. Download from the [Actions tab](../../actions).
+[![Build](https://github.com/fgeck/zmk-config/actions/workflows/build.yml/badge.svg)](https://github.com/fgeck/zmk-config/actions/workflows/build.yml)
+
+**[⬇️ Download Latest Firmware](../../releases/latest)**
+
+Firmware builds automatically via GitHub Actions. Download artifacts from the [Actions tab](../../actions) or stable releases from [Releases](../../releases).
 
 ## Keymap Visualization
 
