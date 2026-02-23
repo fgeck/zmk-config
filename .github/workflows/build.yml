@@ -1,6 +1,16 @@
 name: Build ZMK firmware
-on: [push, pull_request, workflow_dispatch]
+
+on:
+  workflow_dispatch:
+  pull_request:
+  push:
+    paths:
+      - "config/**"
+      - "boards/**"
+      - "build.yaml"
+      - "zephyr/**"
 
 jobs:
   build:
+    if: github.event_name == 'workflow_dispatch' || !contains(github.event.head_commit.message, '[skip ci]')
     uses: zmkfirmware/zmk/.github/workflows/build-user-config.yml@main
