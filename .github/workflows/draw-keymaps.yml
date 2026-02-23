@@ -10,6 +10,9 @@ on:
       - "scripts/filter-keymap-for-flake-m.py"
       - "docs/keymap-drawer/anywhy_flake_m.json"
 
+permissions:
+  contents: write
+
 jobs:
   draw:
     runs-on: ubuntu-latest
