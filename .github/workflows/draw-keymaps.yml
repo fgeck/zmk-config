@@ -33,5 +33,5 @@ jobs:
       - name: Commit changes
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: "[skip ci] keymap-drawer render"
+          commit_message: "Update keymap-drawer render"
           file_pattern: "docs/keymap-drawer/keymap.svg"
