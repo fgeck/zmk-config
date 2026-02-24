@@ -696,7 +696,7 @@
 //         ┣━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━┫                     ┣━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━┫
 //         ┃   TAB   ┃ sk_GUI  ┃ sk_ALT  ┃ sk_CTRL ┃ sk_SHFT ┃         ┃                     ┃  ←/Ln   ┃  ↓/Doc↓ ┃  ↑/Doc↑ ┃  →/Ln   ┃DEL/Wrd  ┃         ┃
 //         ┣━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━┫                     ┣━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━┫
-//         ┃         ┃         ┃         ┃         ┃         ┃         ┃                     ┃         ┃  Home   ┃  PgDn   ┃  PgUp   ┃   End   ┃   ESC   ┃
+//         ┃         ┃         ┃         ┃         ┃         ┃         ┃                     ┃  End    ┃  PgDn   ┃  PgUp   ┃   Home  ┃         ┃   ESC   ┃
 //         ┗━━━━━━━━━┻━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━┓ ┏━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━┻━━━━━━━━━┛
 //                             ┃  Idea   ┃   ALT   ┃   GUI   ┃  SPACE  ┃  ████   ┃ ┃   NUM   ┃  SHIFT  ┃   GUI   ┃   ALT   ┃   FN    ┃
 //                             ┗━━━━━━━━━┻━━━━━━━━━┻━━━━━━━━━┻━━━━━━━━━┻━━━━━━━━━┛ ┗━━━━━━━━━┻━━━━━━━━━┻━━━━━━━━━┻━━━━━━━━━┻━━━━━━━━━┛
@@ -705,12 +705,12 @@
 //         Arrows: Tap=arrow, Hold=extended navigation (←/→=line start/end, ↑/↓=doc start/end)
 //         Delete: Tap=single char, Hold=word delete (Backspace=Alt+Bspc, Delete=Alt+Del)
             bindings = <
-// ╷           ╷         ╷         ╷          ╷          ╷         ╷   ╷                     ╷                    ╷                  ╷                     ╷                    ╷         ╷
-&none        &none      &none      &none      &none      &none          &none                &none                &none              &none                 &none                &none
-&kp ENTER    &none      &none      &none      &none      &none          &kp LG(LS(Z))        &kp LG(V)            &kp LG(C)          &kp LG(X)             &kp LG(Z)            &nav_bspc LA(BSPC) BSPC
-&kp TAB      &sk LGUI   &sk LALT   &sk LCTRL  &sk LSHFT  &none          &nav_left LG(LEFT) LEFT  &nav_down LG(DOWN) DOWN  &nav_up LG(UP) UP  &nav_right LG(RIGHT) RIGHT  &nav_del LA(DEL) DEL  &none
-&none        &none      &none      &none      &none      &none          &none                &kp HOME             &kp PG_DN          &kp PG_UP             &kp END              &kp ESC
-             &trans     &trans     &trans     &trans     &none          &mo 1                &trans               &trans             &trans                &trans
+// ╷           ╷         ╷         ╷          ╷          ╷         ╷   ╷                         ╷                          ╷                  ╷                            ╷                       ╷         ╷
+&none        &none      &none      &none      &none      &none          &none                    &none                      &none              &none                        &none                   &none
+&kp ENTER    &none      &none      &none      &none      &none          &kp LG(LS(Z))            &kp LG(V)                  &kp LG(C)          &kp LG(X)                    &kp LG(Z)               &nav_bspc LA(BSPC) BSPC
+&kp TAB      &sk LGUI   &sk LALT   &sk LCTRL  &sk LSHFT  &none          &nav_left LG(LEFT) LEFT  &nav_down LG(DOWN) DOWN    &nav_up LG(UP) UP  &nav_right LG(RIGHT) RIGHT   &nav_del LA(DEL) DEL    &none
+&none        &none      &none      &none      &none      &none          &kp END                 &kp PG_DN                  &kp PG_UP          &kp HOME                      &none                   &kp ESC
+             &trans     &trans     &trans     &trans     &none          &mo 1                    &trans                     &trans             &trans                       &trans
             >;
         };
 
