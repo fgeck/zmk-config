@@ -380,27 +380,27 @@
         umlaut_a: umlaut_a {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <10>;
-            tap-ms = <10>;
-            bindings = <&kp LA(U) &kp A>;
+            wait-ms = <40>;
+            tap-ms = <40>;
+            bindings = <&kp LA(U)>, <&macro_wait_time 20>, <&kp A>;
             label = "UMLAUT_A";
         };
 
         umlaut_o: umlaut_o {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <10>;
-            tap-ms = <10>;
-            bindings = <&kp LA(U) &kp O>;
+            wait-ms = <40>;
+            tap-ms = <40>;
+            bindings = <&kp LA(U)>, <&macro_wait_time 20>, <&kp O>;
             label = "UMLAUT_O";
         };
 
         umlaut_u: umlaut_u {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <10>;
-            tap-ms = <10>;
-            bindings = <&kp LA(U) &kp U>;
+            wait-ms = <40>;
+            tap-ms = <40>;
+            bindings = <&kp LA(U)>, <&macro_wait_time 20>, <&kp U>;
             label = "UMLAUT_U";
         };
 
