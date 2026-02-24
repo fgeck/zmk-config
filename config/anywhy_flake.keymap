@@ -375,32 +375,32 @@
     };
 
     macros {
-        // German Umlauts via dead key sequences (works on standard U.S. keyboard layout)
+        // German Umlauts via dead key sequences (works on standard ABC Mac keyboard layout)
         // Option+U produces dead umlaut (¨), then press the vowel
         umlaut_a: umlaut_a {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <40>;
-            tap-ms = <40>;
-            bindings = <&kp LA(U)>, <&macro_wait_time 20>, <&kp A>;
+            wait-ms = <20>;
+            tap-ms = <20>;
+            bindings = <&kp LA(U) &kp A>;
             label = "UMLAUT_A";
         };
 
         umlaut_o: umlaut_o {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <40>;
-            tap-ms = <40>;
-            bindings = <&kp LA(U)>, <&macro_wait_time 20>, <&kp O>;
+            wait-ms = <20>;
+            tap-ms = <20>;
+            bindings = <&kp LA(U) &kp O>;
             label = "UMLAUT_O";
         };
 
         umlaut_u: umlaut_u {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <40>;
-            tap-ms = <40>;
-            bindings = <&kp LA(U)>, <&macro_wait_time 20>, <&kp U>;
+            wait-ms = <20>;
+            tap-ms = <20>;
+            bindings = <&kp LA(U) &kp U>;
             label = "UMLAUT_U";
         };
 
