@@ -12,19 +12,48 @@ jobs:
   build:
     uses: zmkfirmware/zmk/.github/workflows/build-user-config.yml@main
 
+  draw-keymap:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install dependencies
+        run: pip install keymap-drawer pyyaml
+
+      - name: Generate keymap SVG
+        run: |
+          keymap -c keymap_drawer.config.yaml parse -z config/anywhy_flake.keymap \
+            | python scripts/filter-keymap-for-flake-m.py \
+            | keymap -c keymap_drawer.config.yaml draw - -o keymap.svg
+
+      - name: Upload keymap artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: keymap
+          path: keymap.svg
+
   release:
-    needs: build
+    needs: [build, draw-keymap]
     runs-on: ubuntu-latest
     steps:
       - name: Download firmware
         uses: actions/download-artifact@v4
         with:
+          name: firmware
           path: firmware
+
+      - name: Download keymap
+        uses: actions/download-artifact@v4
+        with:
+          name: keymap
+          path: keymap
 
       - name: Prepare release files
         run: |
           mkdir -p release
           find firmware -name "*.uf2" -exec cp {} release/ \;
+          cp keymap/keymap.svg release/
           cd release && zip -r ../firmware.zip .
 
       - name: Create Release
@@ -33,12 +62,16 @@ jobs:
           name: ${{ github.ref_name }}
           body: |
             ## Firmware ${{ github.ref_name }}
-            
+
+            ![Keymap](https://github.com/${{ github.repository }}/releases/download/${{ github.ref_name }}/keymap.svg)
+
             **Files:**
             - `anywhy_flake_left_ble.uf2` - Left half
             - `anywhy_flake_right_ble.uf2` - Right half
             - `settings_reset.uf2` - Reset settings
+            - `keymap.svg` - Keymap visualization
             - `firmware.zip` - All files bundled
           files: |
             release/*.uf2
+            release/keymap.svg
             firmware.zip
