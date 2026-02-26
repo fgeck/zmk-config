@@ -8,6 +8,8 @@ manifest:
       url-base: https://github.com/maatthc
     - name: anywhy-io
       url-base: https://github.com/anywhy-io
+    - name: fgeck
+      url-base: https://github.com/fgeck
   projects:
     - name: zmk
       remote: zmkfirmware
@@ -22,7 +24,7 @@ manifest:
       revision: feat/new-status-screens
       path: modules/prospector-zmk-module
     - name: zmk-feature-appcompanion
-      remote: maatthc
+      remote: fgeck
       revision: main
   self:
     path: config
