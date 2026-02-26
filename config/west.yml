@@ -4,6 +4,8 @@ manifest:
       url-base: https://github.com/zmkfirmware
     - name: carrefinho
       url-base: https://github.com/carrefinho
+    - name: maatthc
+      url-base: https://github.com/maatthc
     - name: anywhy-io
       url-base: https://github.com/anywhy-io
   projects:
@@ -19,5 +21,8 @@ manifest:
       remote: carrefinho
       revision: feat/new-status-screens
       path: modules/prospector-zmk-module
+    - name: zmk-feature-appcompanion
+      remote: maatthc
+      revision: main
   self:
     path: config
