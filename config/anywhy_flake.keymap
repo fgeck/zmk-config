@@ -545,6 +545,44 @@
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
+        // ─────────────────────────────────────────────────────────────────────────
+        // Mod-Morph + Tap-Dance: Combined behaviors
+        // - Tap = primary key
+        // - Double-tap = secondary key (tap-dance)
+        // - Shift+Tap = custom shifted key (mod-morph)
+        // ─────────────────────────────────────────────────────────────────────────
+        mm_lbkt: mm_lbkt {  // tap=[, double-tap={, shift+tap=(
+            compatible = "zmk,behavior-mod-morph";
+            label = "MM_LBKT";
+            bindings = <&td_lbkt>, <&kp LPAR>;
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        mm_rbkt: mm_rbkt {  // tap=], double-tap=}, shift+tap=)
+            compatible = "zmk,behavior-mod-morph";
+            label = "MM_RBKT";
+            bindings = <&td_rbkt>, <&kp RPAR>;
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        mm_comma: mm_comma {  // tap=,, double-tap=<, shift+tap=-
+            compatible = "zmk,behavior-mod-morph";
+            label = "MM_COMMA";
+            bindings = <&td_comma>, <&kp MINUS>;
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        mm_dot: mm_dot {  // tap=., double-tap=>, shift+tap=_
+            compatible = "zmk,behavior-mod-morph";
+            label = "MM_DOT";
+            bindings = <&td_dot>, <&kp UNDER>;
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
         td_a: td_a {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
@@ -636,23 +674,23 @@
 //         ┏╍╍╍╍╍╍╍╍╍┳╍╍╍╍╍╍╍╍╍┳╍╍╍╍╍╍╍╍╍┳╍╍╍╍╍╍╍╍╍┳╍╍╍╍╍╍╍╍╍┳╍╍╍╍╍╍╍╍╍┓                     ┏╍╍╍╍╍╍╍╍╍┳╍╍╍╍╍╍╍╍╍┳╍╍╍╍╍╍╍╍╍┳╍╍╍╍╍╍╍╍╍┳╍╍╍╍╍╍╍╍╍┳╍╍╍╍╍╍╍╍╍┓
 //         ┃ ------  ┃ ------  ┃ ------  ┃ ------  ┃ ------  ┃ ------  ┃                     ┃ ------  ┃ ------  ┃ ------  ┃ ------  ┃ ------  ┃ ------  ┃  <- Row 0: L only (not on M)
 //         ┣━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━┫                     ┣━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━┫
-//         ┃  ENTER  ┃    Q    ┃    W    ┃    E    ┃    R    ┃    T    ┃                     ┃    Y    ┃   U/Ü   ┃    I    ┃   O/Ö   ┃    P    ┃  BSPC   ┃
+//         ┃   ESC   ┃    Q    ┃    W    ┃    E    ┃    R    ┃    T    ┃                     ┃    Y    ┃   U/Ü   ┃    I    ┃   O/Ö   ┃    P    ┃  BSPC   ┃
 //         ┣━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━┫                     ┣━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━┫
 //         ┃   TAB   ┃   A/Ä   ┃    S    ┃    D    ┃    F    ┃    G    ┃                     ┃    H    ┃    J    ┃    K    ┃    L    ┃   ;/:   ┃   '/"   ┃
 //         ┃         ┃   GUI   ┃   ALT   ┃  CTRL   ┃  SHIFT  ┃         ┃                     ┃         ┃  SHIFT  ┃  CTRL   ┃   ALT   ┃   GUI   ┃         ┃  <- HRM (Miryoku)
 //         ┣━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━┫                     ┣━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━┫
-//         ┃   [/{   ┃    Z    ┃    X    ┃    C    ┃    V    ┃    B    ┃                     ┃    N    ┃    M    ┃   ,/<   ┃   ./>   ┃   //?   ┃   ]/}   ┃
+//         ┃   [/(   ┃    Z    ┃    X    ┃    C    ┃    V    ┃    B    ┃                     ┃    N    ┃    M    ┃   ,/-   ┃   ./_   ┃   //??  ┃   ]/)   ┃
 //         ┗━━━━━━━━━┻━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━┓ ┏━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━┻━━━━━━━━━┛
 //                             ┃  Idea   ┃   ALT   ┃   GUI   ┃  SPACE  ┃   NAV   ┃ ┃   NUM   ┃  SHIFT  ┃   GUI   ┃   ALT   ┃   FN    ┃
 //                             ┗━━━━━━━━━┻━━━━━━━━━┻━━━━━━━━━┻━━━━━━━━━┻━━━━━━━━━┛ ┗━━━━━━━━━┻━━━━━━━━━┻━━━━━━━━━┻━━━━━━━━━┻━━━━━━━━━┛
 //
-//         Tap-Dance: a→ä, o→ö, u→ü, ;→:, '→", [→{, ]→}, ,→<, .→>, /→?
+//         Tap-Dance: a→ä, o→ö, u→ü, ;→:, '→", //→?  |  Mod-Morph (Shift): [→(, ]→), ,→-, .→_
             bindings = <
 // ╷         ╷         ╷         ╷         ╷         ╷         ╷   ╷         ╷         ╷         ╷         ╷         ╷         ╷
 &none       &none     &none     &none      &none      &none          &none    &none     &none      &none      &none      &none
-&kp ENTER   &kp Q     &kp W     &kp E      &kp R      &kp T          &kp Y    &td_u     &kp I      &td_o      &kp P      &kp BSPC
+&kp ESC     &kp Q     &kp W     &kp E      &kp R      &kp T          &kp Y    &td_u     &kp I      &td_o      &kp P      &kp BSPC
 &kp TAB     &hml_td_a LGUI 0  &hml LALT S  &hml LCTRL D  &hml LSHFT F  &kp G    &kp H  &hmr RSHFT J  &hmr RCTRL K  &hmr LALT L  &hmr_td_semi RGUI 0  &td_apos
-&td_lbkt    &kp Z     &kp X     &kp C      &kp V      &kp B          &kp N    &kp M     &td_comma  &td_dot    &td_fslh   &td_rbkt
+&mm_lbkt    &kp Z     &kp X     &kp C      &kp V      &kp B          &kp N    &kp M     &mm_comma  &mm_dot    &td_fslh   &mm_rbkt
             &mo 4     &kp LALT  &kp LGUI   &kp SPACE  &mo 2          &mo 1    &kp LSHFT &kp RGUI   &kp RALT   &mo 3
             >;
         };
