@@ -255,7 +255,7 @@ rect.held { fill: #e6b8af; }
 <g transform="translate(0, 56)">
 <g transform="translate(28, 70)" class="key keypos-0">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
-<use href="#mdi:keyboard-return" xlink:href="#mdi:keyboard-return" x="-7" y="-7" height="14" width="14.0" class="key tap glyph mdi:keyboard-return"/>
+<text x="0" y="0" class="key tap">Esc</text>
 </g>
 <g transform="translate(84, 70)" class="key keypos-1">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
@@ -365,7 +365,7 @@ rect.held { fill: #e6b8af; }
 <g transform="translate(28, 182)" class="key keypos-24">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
 <text x="0" y="0" class="key tap">[</text>
-<text x="0" y="-24" class="key shifted">{</text>
+<text x="0" y="-24" class="key shifted">(</text>
 </g>
 <g transform="translate(84, 182)" class="key keypos-25">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
@@ -398,12 +398,12 @@ rect.held { fill: #e6b8af; }
 <g transform="translate(700, 140)" class="key keypos-32">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
 <text x="0" y="0" class="key tap">,</text>
-<text x="0" y="-24" class="key shifted">&lt;</text>
+<text x="0" y="-24" class="key shifted">-</text>
 </g>
 <g transform="translate(756, 154)" class="key keypos-33">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
 <text x="0" y="0" class="key tap">.</text>
-<text x="0" y="-24" class="key shifted">&gt;</text>
+<text x="0" y="-24" class="key shifted">_</text>
 </g>
 <g transform="translate(812, 182)" class="key keypos-34">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
@@ -413,7 +413,7 @@ rect.held { fill: #e6b8af; }
 <g transform="translate(868, 182)" class="key keypos-35">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
 <text x="0" y="0" class="key tap">]</text>
-<text x="0" y="-24" class="key shifted">}</text>
+<text x="0" y="-24" class="key shifted">)</text>
 </g>
 <g transform="translate(140, 210)" class="key keypos-36">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
