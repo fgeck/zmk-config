@@ -2,7 +2,22 @@
 
 Personal ZMK keymap for the [Anywhy Flake M](https://github.com/anywhy-xyz/zmk-module-anywhy) (46-key split ergonomic keyboard), heavily inspired by [urob's zmk-config](https://github.com/urob/zmk-config).
 
-![Keymap](docs/keymap-drawer/keymap.svg)
+## Layers
+
+### Base Layer (with Combos)
+![Base Layer](docs/keymap-drawer/layer-base.svg)
+
+### Num Layer
+![Num Layer](docs/keymap-drawer/layer-num.svg)
+
+### Nav Layer
+![Nav Layer](docs/keymap-drawer/layer-nav.svg)
+
+### Fn Layer
+![Fn Layer](docs/keymap-drawer/layer-fn.svg)
+
+### Idea Layer
+![Idea Layer](docs/keymap-drawer/layer-idea.svg)
 
 ## Features
 
@@ -58,16 +73,17 @@ Inspired by [urob's nav cluster](https://github.com/urob/zmk-config?tab=readme-o
 | R+F | $ |
 | T+G | % |
 | Y+H | ^ |
-| U+J | & |
+| U+J | + |
 | I+K | * |
-| O+L | ( |
-| P+; | ) |
-
-### Additional Layers
-
-- **NUM**: Numpad layout with sticky mods
-- **FN**: F-keys, media controls, brightness, Bluetooth
-- **Idea**: IntelliJ IDEA shortcuts
+| O+L | & |
+| A+Z | ` |
+| S+X | \ |
+| D+C | = |
+| F+V | ~ |
+| H+N | _ |
+| J+M | - |
+| K+, | / |
+| L+. | \| |
 
 ### Bluetooth
 - 5 profiles (BT1-BT5)
@@ -83,7 +99,7 @@ Firmware builds automatically via GitHub Actions. Download artifacts from the [A
 
 ## Keymap Visualization
 
-Generated with [keymap-drawer](https://github.com/caksoylar/keymap-drawer). SVG updates automatically on keymap changes.
+Generated with [keymap-drawer](https://github.com/caksoylar/keymap-drawer). SVGs update automatically on keymap changes.
 
 ## Credits
 
