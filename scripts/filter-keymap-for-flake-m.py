@@ -38,7 +38,7 @@ def filter_for_flake_m(data, add_combos_layer=True):
 
         new_layers["Combos"] = [""] * num_keys
 
-        for layer_name in ["Nav", "Num", "Fn", "Idea"]:
+        for layer_name in ["Num", "Sym", "Nav", "Fn", "Idea"]:
             if layer_name in old_layers:
                 new_layers[layer_name] = old_layers[layer_name]
 

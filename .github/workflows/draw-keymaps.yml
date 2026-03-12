@@ -9,7 +9,7 @@ on:
       - "config/*.keymap"
       - "config/*.dtsi"
       - "keymap_drawer.config.yaml"
-      - "scripts/filter-keymap-for-flake-m.py"
+      - "scripts/*.py"
       - "docs/keymap-drawer/anywhy_flake_m.json"
 
 permissions:
@@ -26,14 +26,35 @@ jobs:
       - name: Install dependencies
         run: pip install keymap-drawer pyyaml
 
-      - name: Generate keymap SVG
+      - name: Generate per-layer SVGs
         run: |
+          # Base layer with combos
           keymap -c keymap_drawer.config.yaml parse -z config/anywhy_flake.keymap \
-            | python scripts/filter-keymap-for-flake-m.py \
-            | keymap -c keymap_drawer.config.yaml draw - -o docs/keymap-drawer/keymap.svg
+            | python scripts/generate-layer-images.py Base --with-combos \
+            | keymap -c keymap_drawer.config.yaml draw - -o docs/keymap-drawer/layer-base.svg
+
+          # Num layer
+          keymap -c keymap_drawer.config.yaml parse -z config/anywhy_flake.keymap \
+            | python scripts/generate-layer-images.py Num \
+            | keymap -c keymap_drawer.config.yaml draw - -o docs/keymap-drawer/layer-num.svg
+
+          # Nav layer
+          keymap -c keymap_drawer.config.yaml parse -z config/anywhy_flake.keymap \
+            | python scripts/generate-layer-images.py Nav \
+            | keymap -c keymap_drawer.config.yaml draw - -o docs/keymap-drawer/layer-nav.svg
+
+          # Fn layer
+          keymap -c keymap_drawer.config.yaml parse -z config/anywhy_flake.keymap \
+            | python scripts/generate-layer-images.py Fn \
+            | keymap -c keymap_drawer.config.yaml draw - -o docs/keymap-drawer/layer-fn.svg
+
+          # Idea layer
+          keymap -c keymap_drawer.config.yaml parse -z config/anywhy_flake.keymap \
+            | python scripts/generate-layer-images.py Idea \
+            | keymap -c keymap_drawer.config.yaml draw - -o docs/keymap-drawer/layer-idea.svg
 
       - name: Commit changes
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: "Update keymap-drawer render"
-          file_pattern: "docs/keymap-drawer/keymap.svg"
+          commit_message: "Update keymap-drawer renders [skip ci]"
+          file_pattern: "docs/keymap-drawer/*.svg"
