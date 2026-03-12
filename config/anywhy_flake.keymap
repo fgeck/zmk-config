@@ -681,7 +681,7 @@
 //         ┣━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━┫                     ┣━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━┫
 //         ┃   [/(   ┃    Z    ┃    X    ┃    C    ┃    V    ┃    B    ┃                     ┃    N    ┃    M    ┃   ,/-   ┃   ./_   ┃   //??  ┃   ]/)   ┃
 //         ┗━━━━━━━━━┻━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━┓ ┏━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━┻━━━━━━━━━┛
-//                             ┃  Idea   ┃   ALT   ┃   GUI   ┃  SPACE  ┃   NAV   ┃ ┃   NUM   ┃  SHIFT  ┃   GUI   ┃   ALT   ┃   FN    ┃
+//                             ┃  Idea   ┃   ALT   ┃  HYPER  ┃  ENTER  ┃   NAV   ┃ ┃   NUM   ┃SPC/SYM  ┃  HYPER  ┃   ALT   ┃   FN    ┃
 //                             ┗━━━━━━━━━┻━━━━━━━━━┻━━━━━━━━━┻━━━━━━━━━┻━━━━━━━━━┛ ┗━━━━━━━━━┻━━━━━━━━━┻━━━━━━━━━┻━━━━━━━━━┻━━━━━━━━━┛
 //
 //         Tap-Dance: a→ä, o→ö, u→ü, ;→:, '→", //→?  |  Mod-Morph (Shift): [→(, ]→), ,→-, .→_
@@ -691,7 +691,7 @@
 &kp ESC     &kp Q     &kp W     &kp E      &kp R      &kp T          &kp Y    &td_u     &kp I      &td_o      &kp P      &kp BSPC
 &kp TAB     &hml_td_a LGUI 0  &hml LALT S  &hml LCTRL D  &hml LSHFT F  &kp G    &kp H  &hmr RSHFT J  &hmr RCTRL K  &hmr LALT L  &hmr_td_semi RGUI 0  &td_apos
 &mm_lbkt    &kp Z     &kp X     &kp C      &kp V      &kp B          &kp N    &kp M     &mm_comma  &mm_dot    &td_fslh   &mm_rbkt
-            &mo 4     &kp LALT  &kp LGUI   &kp SPACE  &mo 2          &mo 1    &kp LSHFT &kp RGUI   &kp RALT   &mo 3
+            &mo 4     &kp LALT  &kp LC(LA(LGUI))   &kp ENTER  &mo 2          &mo 1    &lt 5 SPACE &kp LC(LA(RGUI))   &kp RALT   &mo 3
             >;
         };
 // ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
@@ -703,21 +703,21 @@
 //         ┏╍╍╍╍╍╍╍╍╍┳╍╍╍╍╍╍╍╍╍┳╍╍╍╍╍╍╍╍╍┳╍╍╍╍╍╍╍╍╍┳╍╍╍╍╍╍╍╍╍┳╍╍╍╍╍╍╍╍╍┓                     ┏╍╍╍╍╍╍╍╍╍┳╍╍╍╍╍╍╍╍╍┳╍╍╍╍╍╍╍╍╍┳╍╍╍╍╍╍╍╍╍┳╍╍╍╍╍╍╍╍╍┳╍╍╍╍╍╍╍╍╍┓
 //         ┃ ------  ┃ ------  ┃ ------  ┃ ------  ┃ ------  ┃ ------  ┃                     ┃ ------  ┃ ------  ┃ ------  ┃ ------  ┃ ------  ┃ ------  ┃  <- Row 0: L only (not on M)
 //         ┣━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━┫                     ┣━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━┫
-//         ┃  ENTER  ┃    7    ┃    8    ┃    9    ┃    +    ┃    -    ┃                     ┃         ┃         ┃         ┃         ┃         ┃  BSPC   ┃
+//         ┃   ESC   ┃    7    ┃    8    ┃    9    ┃    +    ┃    -    ┃                     ┃         ┃         ┃         ┃         ┃         ┃  BSPC   ┃
 //         ┣━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━┫                     ┣━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━┫
 //         ┃   TAB   ┃    4    ┃    5    ┃    6    ┃    *    ┃    /    ┃                     ┃         ┃ sk_SHFT ┃ sk_CTRL ┃ sk_ALT  ┃ sk_GUI  ┃         ┃
 //         ┣━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━┫                     ┣━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━┫
 //         ┃    =    ┃    1    ┃    2    ┃    3    ┃    0    ┃    .    ┃                     ┃         ┃         ┃         ┃         ┃         ┃   ESC   ┃
 //         ┗━━━━━━━━━┻━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━┓ ┏━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━┻━━━━━━━━━┛
-//                             ┃  Idea   ┃   ALT   ┃   GUI   ┃  SPACE  ┃   NAV   ┃ ┃  ████   ┃  SHIFT  ┃   GUI   ┃   ALT   ┃   FN    ┃
+//                             ┃  Idea   ┃   ALT   ┃  HYPER  ┃  ENTER  ┃   NAV   ┃ ┃  ████   ┃SPC/SYM  ┃  HYPER  ┃   ALT   ┃   FN    ┃
 //                             ┗━━━━━━━━━┻━━━━━━━━━┻━━━━━━━━━┻━━━━━━━━━┻━━━━━━━━━┛ ┗━━━━━━━━━┻━━━━━━━━━┻━━━━━━━━━┻━━━━━━━━━┻━━━━━━━━━┛
             bindings = <
 // ╷         ╷         ╷         ╷         ╷         ╷         ╷   ╷         ╷         ╷         ╷         ╷         ╷         ╷
 &none       &none     &none     &none      &none      &none          &none   &none      &none      &none     &none     &none
-&kp ENTER   &kp N7    &kp N8    &kp N9     &kp PLUS   &kp MINUS      &none   &none      &none      &none     &none     &kp BSPC
+&kp ESC     &kp N7    &kp N8    &kp N9     &kp PLUS   &kp MINUS      &none   &none      &none      &none     &none     &kp BSPC
 &kp TAB     &kp N4    &kp N5    &kp N6     &kp ASTRK  &kp FSLH       &none   &sk LSHFT  &sk LCTRL  &sk LALT  &sk LGUI  &none
 &kp EQUAL   &kp N1    &kp N2    &kp N3     &kp N0     &kp DOT        &none   &none      &none      &none     &none     &kp ESC
-            &trans    &trans    &trans     &trans     &mo 2          &none   &trans     &trans     &trans    &trans
+            &trans    &trans    &trans     &kp ENTER  &mo 2          &none   &lt 5 SPACE &trans     &trans    &trans
             >;
         };
 
@@ -736,7 +736,7 @@
 //         ┣━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━┫                     ┣━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━┫
 //         ┃         ┃         ┃         ┃         ┃         ┃         ┃                     ┃  ALT←   ┃  ALT↓   ┃  ALT↑   ┃   ALT→  ┃         ┃   ESC   ┃
 //         ┗━━━━━━━━━┻━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━┓ ┏━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━┻━━━━━━━━━┛
-//                             ┃  Idea   ┃   ALT   ┃   GUI   ┃  SPACE  ┃  ████   ┃ ┃   NUM   ┃  HOME   ┃  PG_DN  ┃  PG_UP  ┃   END   ┃
+//                             ┃  Idea   ┃   ALT   ┃  HYPER  ┃  ENTER  ┃  ████   ┃ ┃   NUM   ┃  HOME   ┃  PG_DN  ┃  PG_UP  ┃   END   ┃
 //                             ┗━━━━━━━━━┻━━━━━━━━━┻━━━━━━━━━┻━━━━━━━━━┻━━━━━━━━━┛ ┗━━━━━━━━━┻━━━━━━━━━┻━━━━━━━━━┻━━━━━━━━━┻━━━━━━━━━┛
 //
 //         Clipboard: macOS uses Cmd (LG) - Redo=Cmd+Shift+Z, Paste=Cmd+V, Copy=Cmd+C, Cut=Cmd+X, Undo=Cmd+Z
@@ -748,7 +748,7 @@
 &kp ENTER    &none      &none      &none      &none      &none          &kp LG(LS(Z))            &kp LG(V)                  &kp LG(C)          &kp LG(X)                    &kp LG(Z)               &nav_bspc LA(BSPC) BSPC
 &kp TAB      &sk LGUI   &sk LALT   &sk LCTRL  &sk LSHFT  &none          &nav_left LG(LEFT) LEFT  &nav_down LG(DOWN) DOWN    &nav_up LG(UP) UP  &nav_right LG(RIGHT) RIGHT   &nav_del LA(DEL) DEL    &none
 &none        &none      &none      &none      &none      &none          &kp LA(LEFT)            &kp LA(DOWN)               &kp LA(UP)         &kp LA(RIGHT)                 &none                   &kp ESC
-             &trans     &trans     &trans     &trans     &none          &mo 1                    &kp HOME                   &kp PG_DN          &kp PG_UP                    &kp END
+             &trans     &trans     &trans     &kp ENTER  &none          &mo 1                    &kp HOME                   &kp PG_DN          &kp PG_UP                    &kp END
             >;
         };
 
@@ -770,7 +770,7 @@
 //         ┃         ┃  BRI+   ┃  BRI-   ┃  Lock   ┃         ┃ STUDIO  ┃                     ┃   BT0   ┃   F1    ┃   F2    ┃    F3   ┃   F4    ┃         ┃
 //         ┃         ┃         ┃         ┃         ┃         ┃         ┃                     ┃ Clr_BT0 ┃         ┃         ┃         ┃         ┃         ┃
 //         ┗━━━━━━━━━┻━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━┓ ┏━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━┻━━━━━━━━━┛
-//                             ┃  Idea   ┃   ALT   ┃   GUI   ┃  SPACE  ┃   NAV   ┃ ┃   NUM   ┃  SHIFT  ┃   GUI   ┃   ALT   ┃  ████   ┃
+//                             ┃  Idea   ┃   ALT   ┃  HYPER  ┃  ENTER  ┃   NAV   ┃ ┃   NUM   ┃SPC/SYM  ┃  HYPER  ┃   ALT   ┃  ████   ┃
 //                             ┗━━━━━━━━━┻━━━━━━━━━┻━━━━━━━━━┻━━━━━━━━━┻━━━━━━━━━┛ ┗━━━━━━━━━┻━━━━━━━━━┻━━━━━━━━━┻━━━━━━━━━┻━━━━━━━━━┛
 //
 //         BT0/1/2: Tap to select profile, Shift+Tap to clear
@@ -780,7 +780,7 @@
 &none        &kp C_VOL_UP   &kp C_VOL_DN   &kp C_MUTE   &none      &none                &bt2      &kp F9     &kp F10    &kp F11    &kp F12    &none
 &none        &kp C_NEXT     &kp C_PREV     &kp C_PP     &none      &soft_off            &bt1      &kp F5     &kp F6     &kp F7     &kp F8     &none
 &none        &kp C_BRI_UP   &kp C_BRI_DN   &mac_lock    &none      &studio_unlock       &bt0      &kp F1     &kp F2     &kp F3     &kp F4     &none
-             &trans         &trans         &trans       &trans     &mo 2                &mo 1     &trans     &trans     &trans     &none
+             &trans         &trans         &trans       &kp ENTER  &mo 2                &mo 1     &lt 5 SPACE &trans     &trans     &none
             >;
         };
 
@@ -803,7 +803,7 @@
 //         ┃         ┃ CTRL+1  ┃ CTRL+2  ┃ CTRL+3  ┃ CTRL+4  ┃ CTRL+5  ┃                     ┃ 2xShift ┃CMD+SHIFT┃CMD+SHIFT┃ SHIFT+F6┃         ┃  ESC    ┃
 //         ┃         ┃         ┃         ┃         ┃         ┃         ┃                     ┃         ┃  +F     ┃  +R     ┃ Rename  ┃         ┃         ┃
 //         ┗━━━━━━━━━┻━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━┓ ┏━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━┻━━━━━━━━━┛
-//                             ┃  ████   ┃   ALT   ┃   GUI   ┃  SPACE  ┃   NAV   ┃ ┃   NUM   ┃  SHIFT  ┃   GUI   ┃   ALT   ┃   FN    ┃
+//                             ┃  ████   ┃   ALT   ┃  HYPER  ┃  ENTER  ┃   NAV   ┃ ┃   NUM   ┃SPC/SYM  ┃  HYPER  ┃   ALT   ┃   FN    ┃
 //                             ┗━━━━━━━━━┻━━━━━━━━━┻━━━━━━━━━┻━━━━━━━━━┻━━━━━━━━━┛ ┗━━━━━━━━━┻━━━━━━━━━┻━━━━━━━━━┻━━━━━━━━━┻━━━━━━━━━┛
 //
 //         IntelliJ shortcuts for macOS
@@ -813,7 +813,36 @@
 &kp ENTER    &kp LG(N1)   &kp LG(N2)   &kp LG(N3)   &kp LG(N4)   &kp LG(N5)        &idea_back     &idea_fwd      &kp LG(B)      &idea_impl   &none      &kp BSPC
 &kp TAB      &kp LG(LS(N1)) &kp LG(LS(N2)) &kp LG(LS(N3)) &kp LG(LS(N4)) &kp LG(LS(N5))  &kp F2   &none          &none          &none        &none      &none
 &none        &kp LC(N1)   &kp LC(N2)   &kp LC(N3)   &kp LC(N4)   &kp LC(N5)        &double_shift  &idea_find     &idea_replace  &kp LS(F6)   &none      &kp ESC
-             &none        &trans       &trans       &trans       &mo 2             &mo 1          &trans         &trans         &trans       &trans
+             &none        &trans       &trans       &kp ENTER    &mo 2             &mo 1          &lt 5 SPACE    &trans         &trans       &trans
+            >;
+        };
+
+// ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+
+        sym {
+// ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+            display-name = "Sym";
+// ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+//         ┏╍╍╍╍╍╍╍╍╍┳╍╍╍╍╍╍╍╍╍┳╍╍╍╍╍╍╍╍╍┳╍╍╍╍╍╍╍╍╍┳╍╍╍╍╍╍╍╍╍┳╍╍╍╍╍╍╍╍╍┓                     ┏╍╍╍╍╍╍╍╍╍┳╍╍╍╍╍╍╍╍╍┳╍╍╍╍╍╍╍╍╍┳╍╍╍╍╍╍╍╍╍┳╍╍╍╍╍╍╍╍╍┳╍╍╍╍╍╍╍╍╍┓
+//         ┃ ------  ┃ ------  ┃ ------  ┃ ------  ┃ ------  ┃ ------  ┃                     ┃ ------  ┃ ------  ┃ ------  ┃ ------  ┃ ------  ┃ ------  ┃  <- Row 0: L only (not on M)
+//         ┣━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━┫                     ┣━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━┫
+//         ┃   ESC   ┃    &    ┃    *    ┃    (    ┃    +    ┃    _    ┃                     ┃         ┃         ┃         ┃         ┃         ┃  BSPC   ┃
+//         ┣━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━┫                     ┣━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━┫
+//         ┃   TAB   ┃    $    ┃    %    ┃    ^    ┃    |    ┃    \    ┃                     ┃         ┃ sk_SHFT ┃ sk_CTRL ┃ sk_ALT  ┃ sk_GUI  ┃         ┃
+//         ┣━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━┫                     ┣━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━┫
+//         ┃    =    ┃    !    ┃    @    ┃    #    ┃    )    ┃    -    ┃                     ┃         ┃         ┃         ┃         ┃         ┃   ESC   ┃
+//         ┗━━━━━━━━━┻━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━┓ ┏━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━╋━━━━━━━━━┻━━━━━━━━━┛
+//                             ┃  Idea   ┃   ALT   ┃  HYPER  ┃  ENTER  ┃   NAV   ┃ ┃   NUM   ┃  ████   ┃  HYPER  ┃   ALT   ┃   FN    ┃
+//                             ┗━━━━━━━━━┻━━━━━━━━━┻━━━━━━━━━┻━━━━━━━━━┻━━━━━━━━━┛ ┗━━━━━━━━━┻━━━━━━━━━┻━━━━━━━━━┻━━━━━━━━━┻━━━━━━━━━┛
+//
+//         Symbol layer mirrors Num layer with shifted equivalents (activated by holding SPACE)
+            bindings = <
+// ╷         ╷         ╷         ╷         ╷         ╷         ╷   ╷         ╷         ╷         ╷         ╷         ╷         ╷
+&none       &none     &none     &none      &none      &none          &none    &none     &none      &none      &none      &none
+&kp ESC     &kp AMPS  &kp ASTRK &kp LPAR   &kp PLUS   &kp UNDER      &none    &none     &none      &none      &none      &kp BSPC
+&kp TAB     &kp DLLR  &kp PRCNT &kp CARET  &kp PIPE   &kp BSLH       &none    &sk LSHFT &sk LCTRL  &sk LALT   &sk LGUI   &none
+&kp EQUAL   &kp EXCL  &kp AT    &kp HASH   &kp RPAR   &kp MINUS      &none    &none     &none      &none      &none      &kp ESC
+            &trans    &trans    &trans     &kp ENTER  &mo 2          &mo 1    &none     &trans     &trans     &trans
             >;
         };
     };
