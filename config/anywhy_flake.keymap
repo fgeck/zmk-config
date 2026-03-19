@@ -768,9 +768,9 @@
 //                             ┃  Idea   ┃   ALT   ┃  HYPER  ┃  ████   ┃  ENTER  ┃ ┃   NUM   ┃  HOME   ┃  PG_DN  ┃  PG_UP  ┃   END   ┃
 //                             ┗━━━━━━━━━┻━━━━━━━━━┻━━━━━━━━━┻━━━━━━━━━┻━━━━━━━━━┛ ┗━━━━━━━━━┻━━━━━━━━━┻━━━━━━━━━┻━━━━━━━━━┻━━━━━━━━━┛
 //
-//         Clipboard: macOS uses Cmd (LG) - Redo=Cmd+Shift+Z, Paste=Cmd+V, Copy=Cmd+C, Cut=Cmd+X, Undo=Cmd+Z
+//Clipboard: macOS uses Cmd (LG) - Redo=Cmd+Shift+Z, Paste=Cmd+V, Copy=Cmd+C, Cut=Cmd+X, Undo=Cmd+Z
 //         Arrows: Tap=arrow, Hold=extended navigation (←/→=line start/end, ↑/↓=doc start/end)
-//         Delete: Tap=single char, Hold=word delete (Backspace=Alt+Bspc, Delete=Alt+Del)
+//         Delete: Tap=single char, Hold=worddelete (Backspace=Alt+Bspc, Delete=Alt+Del)
             bindings = <
 // ╷           ╷         ╷         ╷          ╷          ╷         ╷   ╷                         ╷                          ╷                  ╷                            ╷                       ╷         ╷
 &none        &none      &none      &none      &none      &none          &none                    &none                      &none              &none                        &none                   &none

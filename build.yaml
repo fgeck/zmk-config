@@ -2,7 +2,7 @@
 include:
   # === BLE MODE ===
   - board: xiao_ble//zmk
-    shield: anywhy_flake_left
+    shield: anywhy_flake_left raw_hid_adapter # <-- required for Raw HID support
     snippet: studio-rpc-usb-uart
     artifact-name: anywhy_flake_left_ble
   - board: xiao_ble//zmk
